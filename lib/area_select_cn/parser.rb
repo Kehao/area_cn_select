@@ -1,9 +1,14 @@
 module AreaSelectCn
   class Parser
     class << self
-
       def list 
         @list ||= parser
+      end
+
+      def list_provinces
+        list.map do |province_id,province_hash|
+          [province_hash[:text],province_id]
+        end
       end
 
       def parser 
@@ -32,7 +37,7 @@ module AreaSelectCn
       end
 
       def area_regular
-        Id::Root
+        Id.id_regular
       end
 
       def json_data

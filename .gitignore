@@ -21,3 +21,5 @@
 .DS_Store
 .DS_Store?
 /doc/TODO
+/spec/dummy/log/development.log
+/spec/dummy/tmp/

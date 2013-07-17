@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = AreaSelectCn::VERSION
   s.authors     = ["kehao"]
   s.email       = ["kehao.qiu@gmail.com"]
-  s.homepage    = "test"
+  s.homepage    = "http://cnblogs.com/orez88"
   s.summary     = "AreaSelectCn."
   s.description = "AreaSelectCn."
 
@@ -20,10 +20,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'factory_girl_rails'
-  s.add_development_dependency 'spork', '~> 1.0rc'
-  s.add_development_dependency 'spork-rails'
-
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'haml'
+
+  #s.add_development_dependency 'spork', '~> 1.0rc'
+  #s.add_development_dependency 'spork-rails'
   # s.add_dependency "jquery-rails"
 
 end

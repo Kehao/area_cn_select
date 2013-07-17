@@ -2,13 +2,17 @@
 module AreaSelectCn
   module District
     module_function 
+    def list_provinces
+      Parser.list_provinces
+    end
+
     def list
       Parser.list
     end
 
-    def get(code)
-      return nil if id.blank?
-      Id.new(code).get
+    def id(code)
+      return nil if code.blank?
+      Id.new(code)
     end
 
   end

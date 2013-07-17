@@ -49,6 +49,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    haml (4.0.3)
+      tilt
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -127,8 +129,9 @@ DEPENDENCIES
   area_select_cn!
   capybara
   factory_girl_rails
+  haml
   jquery-rails
   rspec-rails
-  spork (~> 1.0rc)
+  spork
   spork-rails
   sqlite3

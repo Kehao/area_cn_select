@@ -1,0 +1,90 @@
+/** 下拉菜单样式 **/
+dl.area-select-cn dl, 
+dl.area-select-cn ul{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  /*font: inherit;*/
+  vertical-align: baseline;
+}
+dl.area-select-cn ul{ list-style: none; }
+
+dl.area-select-cn,input.area-submit{
+  float:left;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+dl.area-select-cn dt{
+  float:left;
+}
+dl.area-select-cn dt label{
+  line-height:28px;
+  height:28px;
+  margin:0
+}
+.area-submit,.select-input{
+  margin-left:17px;
+}
+.select-input{
+  position: relative;
+  float:left;
+}
+.select-prompt {
+  cursor: pointer;
+  color:#989898;
+  width:119px;
+  height:28px;
+}
+.search-form .first{
+  display:inline;
+  margin-left:12px;
+}
+.select-content{
+  letter-spacing: 2px;
+  background:url("../area_select_cn/area-bg1.jpg");
+  white-space: nowrap;
+  overflow:hidden;
+  text-align:center;
+  float:left;
+  font-size:14px;
+  line-height:28px;
+  width:94px;
+}
+.select-prompt .select-tangle{
+  display:block;
+  width:25px;
+  height:28px;
+  float:right;
+  background:url("../area_select_cn/area-bg2.jpg");
+}
+
+.select-opts {
+  display:none;
+  background-color:#FFFFFF;
+  position: absolute;
+  border: 1px solid #D6D6D6;
+  border-top: none;
+  box-shadow: 0 1px 3px #ECECEC;
+  z-index: 100;
+  top:28px;;
+  left:1px;
+  width:116px;
+  max-height: 350px;
+  overflow:auto;
+  margin: 0;
+}
+.select-opts li{
+  padding-left:6px; 
+  font-size: 14px;
+/*  height: 24px;*/
+  line-height:24px;
+  width:110px;
+  cursor: pointer;
+}
+.select-opts li:hover {
+  background-color: #D6D6D6;
+}
+
+.select-opts li:actived { background-color: #D6D6D6; }
+.select-opts .actived { background-color: #D6D6D6; }

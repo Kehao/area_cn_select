@@ -9,15 +9,31 @@ module AreaSelectCn
     end
 
     def area_name(mark="-")
-      [
-        province && province[:text],
-        city && city[:text],
-        district && district[:text] 
-      ].compact.join(mark) 
+      [province_name,city_name,district_name].compact.join(mark) 
     end
 
     def get_name
       get[:text]
+    end
+
+    def selected_provinces
+      data.map do |province_id,province_hash|
+        [province_hash[:text],province_id]
+      end
+    end
+
+    def selected_cities
+      return [] unless province
+      province[:children].map do |city_id,city_hash|
+        [city_id,city_hash[:text]]
+      end
+    end
+
+    def selected_districts
+      return [] unless city 
+      city[:children].map do |district_id,district_hash| 
+        [district_id,district_hash[:text]]
+      end
     end
 
     def get
@@ -25,6 +41,18 @@ module AreaSelectCn
       @get ||= city? && city
       @get ||= district? && district
       @get
+    end
+
+    def province_name
+      province && province[:text]
+    end
+
+    def city_name
+      city && city[:text]
+    end
+
+    def district_name
+      district && district[:text]
     end
 
     def initialize(id)

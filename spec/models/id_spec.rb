@@ -68,6 +68,20 @@ describe AreaSelectCn::Id do
       expect(AreaSelectCn::Id.new("331002").area_name).to eq("浙江省-台州市-椒江区")
     end
 
+    it "should return selected" do
+      expect(AreaSelectCn::Id.new("330000").selected_provinces).not_to be_blank 
+      expect(AreaSelectCn::Id.new("330000").selected_cities).not_to be_blank
+      expect(AreaSelectCn::Id.new("330000").selected_districts).to be_nil 
+
+      expect(AreaSelectCn::Id.new("331000").selected_provinces).not_to be_blank 
+      expect(AreaSelectCn::Id.new("331000").selected_cities).not_to be_blank 
+      expect(AreaSelectCn::Id.new("331000").selected_districts).not_to be_blank 
+
+      expect(AreaSelectCn::Id.new("331002").selected_provinces).not_to be_blank 
+      expect(AreaSelectCn::Id.new("331002").selected_cities).not_to be_blank 
+      expect(AreaSelectCn::Id.new("331002").selected_districts).not_to be_blank 
+    end
+
   end
 
 end

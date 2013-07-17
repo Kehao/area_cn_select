@@ -2,7 +2,17 @@
 require 'spec_helper'
 
 describe AreaSelectCn::District do
-  specify("get(nil) should be nil"){ subject.get(nil).should be_nil }
-  specify("get('33100a') should be nil") { subject.get("33100a").should be_nil }
+  it "get(nil) should be nil" do 
+    subject.id(nil).should be_nil 
+  end 
 
+  it "get('33100a') should be nil" do  
+    subject.id("33100a").get.should be_nil 
+  end
+  
+  it "should get province,city and district form id" do
+    id = subject.id(331002)
+    pp id.area_name
+    
+  end
 end
