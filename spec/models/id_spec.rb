@@ -71,7 +71,7 @@ describe AreaSelectCn::Id do
     it "should return selected" do
       expect(AreaSelectCn::Id.new("330000").selected_provinces).not_to be_blank 
       expect(AreaSelectCn::Id.new("330000").selected_cities).not_to be_blank
-      expect(AreaSelectCn::Id.new("330000").selected_districts).to be_nil 
+      expect(AreaSelectCn::Id.new("330000").selected_districts).to be_blank 
 
       expect(AreaSelectCn::Id.new("331000").selected_provinces).not_to be_blank 
       expect(AreaSelectCn::Id.new("331000").selected_cities).not_to be_blank 

@@ -12,7 +12,6 @@ describe AreaSelectCn::District do
   
   it "should get province,city and district form id" do
     id = subject.id(331002)
-    pp id.area_name
     
   end
 end
