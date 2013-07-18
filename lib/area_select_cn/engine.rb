@@ -9,7 +9,7 @@ module AreaSelectCn
     end
 
     initializer "area_select_cn.view_helpers" do
-        ActionView::Base.send :include, AreaSelectCn::Helper
+      ActionView::Base.send :include, AreaSelectCn::Helper
     end
   end
 end

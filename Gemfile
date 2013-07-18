@@ -7,9 +7,13 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
-gem "spork"
-gem "spork-rails"
-gem 'mysql2'
+gem "mysql2"
+
+group :development, :test do
+  gem "spork"
+  gem "spork-rails"
+  gem "factory_girl_rails"
+end
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or
