@@ -3,10 +3,10 @@ module AreaSelectCn
   class FormBuilder < ActionView::Helpers::FormBuilder  
     def area_select(attr,options = {})
       @template.render "area_select_cn/area_select", 
-        area_select_options(self.object.public_send(attr)).merge(:f => self,:attr=>attr)
+        area_select_options(self.object.public_send(attr,options)).merge(:f => self,:attr=>attr)
     end
 
-    def area_select_options(region_code,opts={})
+    def area_select_options(region_code,opts)
     options = {
       :selected_province  => nil,
       :selected_city      => nil,
