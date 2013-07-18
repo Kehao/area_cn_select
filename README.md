@@ -2,6 +2,10 @@
 
 地区选择插件
 
+## Example ScreenShot
+
+![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/app/assets/images/area_select_cn/area_select_cn.png)
+
 ## Installation
 
 Add this line to your application's Gemfile:
