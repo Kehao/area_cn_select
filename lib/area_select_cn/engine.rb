@@ -1,3 +1,4 @@
+require "area_select_cn/helper"
 module AreaSelectCn
   class Engine < ::Rails::Engine
     config.generators do |g|
@@ -5,6 +6,10 @@ module AreaSelectCn
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
       g.assets false
       g.helper false
+    end
+
+    initializer "area_select_cn.view_helpers" do
+        ActionView::Base.send :include, AreaSelectCn::Helper
     end
   end
 end
