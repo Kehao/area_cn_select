@@ -5,4 +5,4 @@ zh-CN:
       area_select_cn/company: "公司"
     attributes:
       area_select_cn/company:
-        region_code: "所属地区"
+        region_code: "地区"
