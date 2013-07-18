@@ -1,6 +1,4 @@
-## AreaSelectCn
-
-地区选择插件(测试中)
+## 地区选择插件(测试中)
 
 ## Example ScreenShot
 
