@@ -20,6 +20,7 @@
 *.swp
 .DS_Store
 .DS_Store?
+Gemfile.lock
 /doc/TODO
 /spec/dummy/log/development.log
 /spec/dummy/tmp/
