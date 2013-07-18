@@ -1,6 +1,6 @@
 # encoding: utf-8
 module AreaSelectCn
-  class DistrictController < ApplicationController
+  class DistrictController < ActionController::Base
     layout nil
 
     # 返回树状结构的整个省份，城市，区域列表，

@@ -14,6 +14,5 @@ module AreaSelectCn
       return nil if code.blank?
       Id.new(code)
     end
-
   end
 end
