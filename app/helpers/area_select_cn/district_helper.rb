@@ -9,7 +9,8 @@ module AreaSelectCn
 
     def area_select_options(region_code,opts={})
       options = {
-        :attr_name => "region_code",
+        :name => "region_code",
+        :text => "地区",
         :selected_province  => nil,
         :selected_city      => nil,
         :selected_district  => nil,
@@ -31,6 +32,7 @@ module AreaSelectCn
       else
         options[:selected_provinces] = District.list_provinces
       end
+      
       options
     end
   end

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     :to => AreaSelectCn::DistrictController.action(:index)
 
   # 地区选择
-  get '/area_select_cn/district/:id',
-    :to => AreaSelectCn::DistrictController.action(:list)
+  #get '/area_select_cn/district/:id',
+  #  :to => AreaSelectCn::DistrictController.action(:list)
 end

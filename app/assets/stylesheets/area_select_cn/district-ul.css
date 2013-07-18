@@ -1,5 +1,6 @@
-/** 下拉菜单样式 **/
+/** 地区选择 **/
 dl.area-select-cn dl, 
+dl.area-select-cn label, 
 dl.area-select-cn ul{
   margin: 0;
   padding: 0;
@@ -10,37 +11,26 @@ dl.area-select-cn ul{
 }
 dl.area-select-cn ul{ list-style: none; }
 
-dl.area-select-cn,input.area-submit{
-  float:left;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
 dl.area-select-cn dt{
   float:left;
-}
-dl.area-select-cn dt label{
   line-height:28px;
   height:28px;
-  margin:0
 }
-.area-submit,.select-input{
-  margin-left:17px;
-}
-.select-input{
+
+dl.area-select-cn .select-input{
   position: relative;
+  margin-left:17px;
   float:left;
 }
-.select-prompt {
+
+dl.area-select-cn .select-prompt {
   cursor: pointer;
   color:#989898;
   width:119px;
   height:28px;
 }
-.search-form .first{
-  display:inline;
-  margin-left:12px;
-}
-.select-content{
+
+dl.area-select-cn .select-content{
   letter-spacing: 2px;
   background:url("../area_select_cn/area-bg1.jpg");
   white-space: nowrap;
@@ -51,7 +41,7 @@ dl.area-select-cn dt label{
   line-height:28px;
   width:94px;
 }
-.select-prompt .select-tangle{
+dl.area-select-cn .select-tangle{
   display:block;
   width:25px;
   height:28px;
@@ -59,7 +49,7 @@ dl.area-select-cn dt label{
   background:url("../area_select_cn/area-bg2.jpg");
 }
 
-.select-opts {
+dl.area-select-cn .select-opts {
   display:none;
   background-color:#FFFFFF;
   position: absolute;
@@ -74,7 +64,7 @@ dl.area-select-cn dt label{
   overflow:auto;
   margin: 0;
 }
-.select-opts li{
+dl.area-select-cn .select-opts li{
   padding-left:6px; 
   font-size: 14px;
 /*  height: 24px;*/
@@ -82,9 +72,6 @@ dl.area-select-cn dt label{
   width:110px;
   cursor: pointer;
 }
-.select-opts li:hover {
-  background-color: #D6D6D6;
-}
-
-.select-opts li:actived { background-color: #D6D6D6; }
-.select-opts .actived { background-color: #D6D6D6; }
+dl.area-select-cn .select-opts li:hover { background-color: #D6D6D6; }
+dl.area-select-cn li:actived { background-color: #D6D6D6; }
+dl.area-select-cn .actived  { background-color: #D6D6D6; }

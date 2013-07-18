@@ -25,14 +25,14 @@ module AreaSelectCn
     def selected_cities
       return [] unless province
       province[:children].map do |city_id,city_hash|
-        [city_id,city_hash[:text]]
+        [city_hash[:text],city_id]
       end
     end
 
     def selected_districts
       return [] unless city 
       city[:children].map do |district_id,district_hash| 
-        [district_id,district_hash[:text]]
+        [district_hash[:text],district_id]
       end
     end
 
