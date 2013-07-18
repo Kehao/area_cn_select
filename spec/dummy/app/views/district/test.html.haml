@@ -1,3 +1,3 @@
 = form_for AreaSelectCn::Company.new,
-  :url=>"",:builder => AreaSelectCn::FormBuilder,:html => { :class => 'form-horizontal' } do |f|
-  = f.area_select area_select_options(f.object.region_code)
+  :url=>"",:builder => AreaSelectCn::FormBuilder do |f|
+  = f.area_select :region_code

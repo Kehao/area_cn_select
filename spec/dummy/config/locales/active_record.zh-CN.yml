@@ -1,0 +1,8 @@
+#encoding: utf-8
+zh-CN:
+  activerecord:
+    models:
+      area_select_cn/company: "公司"
+    attributes:
+      area_select_cn/company:
+        region_code: "所属地区"
