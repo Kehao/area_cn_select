@@ -45,7 +45,7 @@ module AreaSelectCn
       end
 
       def data_path
-        "#{AreaSelectCn::Engine.root}/db/areas.json"
+        "#{AreaSelectCn::Engine.root}/lib/areas.json"
       end
     end
   end
