@@ -2,7 +2,7 @@
 
 ## Example ScreenShot
 
-![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/app/assets/images/area_select_cn/area_select_cn.png)
+![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/area_select_cn.png)
 
 ## Installation
 
