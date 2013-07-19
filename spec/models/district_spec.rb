@@ -10,8 +10,7 @@ describe AreaSelectCn::District do
     subject.id("33100a").get.should be_nil 
   end
   
-  it "should get province,city and district form id" do
-    id = subject.id(331002)
-    
-  end
+  #it "should get province,city and district form id" do
+  #  id = subject.id(331002)
+  #end
 end
