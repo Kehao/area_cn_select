@@ -13,6 +13,7 @@ group :development, :test do
   gem "spork"
   gem "spork-rails"
   gem "rspec-rails"
+  gem "capybara"
   gem "factory_girl_rails"
 end
 

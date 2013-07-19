@@ -19,7 +19,7 @@
             :class => selected(province[1], selected_province && selected_province[1], 
             'actived')
     
-  %dd.select-input
+  %dd.select-input.city
     .region-input-prompt.select-prompt
       - if selected_city
         .select-content{:data => {:value => selected_city[1]}}
@@ -36,7 +36,7 @@
           :class => selected(city[0], selected_city && selected_city[0], 
           'actived')
 
-  %dd.select-input
+  %dd.select-input.district
     .region-input-prompt.select-prompt
       - if selected_district
         .select-content{:data => {:value => selected_district[1]}}
