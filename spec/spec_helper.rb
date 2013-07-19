@@ -55,6 +55,7 @@ require 'factory_girl_rails'
 require 'haml'
 
 Rails.backtrace_cleaner.remove_silencers!
+Capybara.javascript_driver = :webkit
 
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }

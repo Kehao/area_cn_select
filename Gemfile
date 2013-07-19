@@ -14,6 +14,7 @@ group :development, :test do
   gem "spork-rails"
   gem "rspec-rails"
   gem "capybara"
+  gem "capybara-webkit"
   gem "factory_girl_rails"
 end
 

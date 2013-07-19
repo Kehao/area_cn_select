@@ -191,7 +191,7 @@
     district: null,
     options: {
       selectContainer:        '.select-input',
-      selectOptsContainer:    '.select-opts.region-selects',
+      selectOptsContainer:    '.select-opts',
       selectPromptContainer:  '.region-input-prompt',
       selectedClass:          'actived',
       dataName:               'data-value',

@@ -1,7 +1,9 @@
 module AreaSelectCn
   class Engine < ::Rails::Engine
     initializer "area_select_cn.view_helpers" do
-      ActionView::Base.send :include, AreaSelectCn::Helper
+      ::ActiveSupport.on_load(:action_view) do
+        ::ActionView::Base.send :include, AreaSelectCn::Helper
+      end
     end
   end
 end
@@ -12,4 +14,4 @@ end
 #  g.assets false
 #  g.helper false
 #end
- 
+
