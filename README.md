@@ -1,4 +1,4 @@
-## 地区选择插件(测试中:smirk_cat:)
+## 地区选择插件(测试中) [![Gem Version](https://badge.fury.io/rb/area_cn.png)](http://badge.fury.io/rb/area_cn)
   整理各种地区选择器
 
 ## Example ScreenShot
