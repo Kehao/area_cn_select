@@ -15,11 +15,11 @@ Features
 
 TODO
 ----
-  1.view helper area_select_cn_tag
-  2.兼容rails 4.0
-  3.auto complete 选择器
-  4.editable
-  5.兼容ie6 
+  1. view helper area_select_cn_tag
+  2. 兼容rails 4.0
+  3. auto complete 选择器
+  4. editable
+  5. 兼容ie6 
 
 Installation
 ------------
