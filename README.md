@@ -1,13 +1,22 @@
-## 地区选择插件(测试中)
-:smile:
+## 地区选择插件(测试中:smirk_cat:)
+  整理各种地区选择器
+
 ## Example ScreenShot
 ### defaule theme
-![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/default-theme.png)
+![Default Theme](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/default-theme.png)
 
 ### bootstrap theme
-![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/bootstrap-theme.png)
+![Bootstrap Theme](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/bootstrap-theme.png)
 
-## Installation
+Features
+--------
+  1. **test**
+TODO
+--------
+  1. **test**
+
+Installation
+------------
 
 Add this line to your application's Gemfile:
 
@@ -17,7 +26,8 @@ And then execute:
 
     $ bundle
 
-## Contributing
+Contributing
+------------
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
