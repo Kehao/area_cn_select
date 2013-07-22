@@ -1,8 +1,11 @@
 ## 地区选择插件(测试中)
 
 ## Example ScreenShot
+# defaule theme
+![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/default-theme.png)
 
-![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/area_select_cn.png)
+# bootstrap theme
+![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/bootstrap-theme.png)
 
 ## Installation
 
