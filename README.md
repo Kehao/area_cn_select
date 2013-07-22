@@ -11,7 +11,7 @@
 
 Add this line to your application's Gemfile:
 
-    gem 'area_cn',:git=>"git@github.com:Kehao/area_select_cn.git"
+    gem 'area_select_cn',:git=>"git@github.com:Kehao/area_select_cn.git"
 
 And then execute:
 
