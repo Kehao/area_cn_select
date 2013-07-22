@@ -10,21 +10,29 @@
 
 Features
 --------
-  1. **test**
+  1. 支持bootstrap 风格 
+  2. 支持simple_form
+
 TODO
---------
-  1. **test**
+----
+  1.view helper area_select_cn_tag
+  2.兼容rails 4.0
+  3.auto complete 选择器
+  4.editable
+  5.兼容ie6 
 
 Installation
 ------------
 
-Add this line to your application's Gemfile:
-
+Add it to your Gemfile:
+```ruby
     gem 'area_select_cn',:git=>"git@github.com:Kehao/area_select_cn.git"
+```
 
 And then execute:
-
-    $ bundle
+```console
+    bundle install
+```
 
 Contributing
 ------------
