@@ -1,5 +1,5 @@
 ## 地区选择插件(测试中)
-
+:smile:
 ## Example ScreenShot
 ### defaule theme
 ![ScreenShot](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/default-theme.png)
