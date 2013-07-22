@@ -192,7 +192,7 @@
     options: {
       selectContainer:        '.select-input',
       selectOptsContainer:    '.select-opts',
-      selectPromptContainer:  '.region-input-prompt',
+      selectPromptContainer:  '.select-prompt',
       selectedClass:          'actived',
       dataName:               'data-value',
       perAjax:                false, //是每次选择区域进行请求，还是一次获得所有区域数据

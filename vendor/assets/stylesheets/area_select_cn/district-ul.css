@@ -1,7 +1,31 @@
+.theme-default .clearfix:after
+{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+
+*html .theme-default .clearfix{
+  height:1%;
+}
+
+*+html .theme-default .clearfix{
+  height:1%;
+}
+
+.theme-default .clearfix
+{
+  display:inline-block;
+}
+
+.theme-default .clearfix {display:block;}
+
 /** 地区选择 **/
-dl.area-select-cn dl, 
-dl.area-select-cn label, 
-dl.area-select-cn ul{
+.theme-default dl.area-select-cn, 
+.theme-default dl.area-select-cn label, 
+.theme-default dl.area-select-cn ul{
   margin: 0;
   padding: 0;
   border: 0;
@@ -9,28 +33,28 @@ dl.area-select-cn ul{
   /*font: inherit;*/
   vertical-align: baseline;
 }
-dl.area-select-cn ul{ list-style: none; }
+.theme-default dl.area-select-cn ul{ list-style: none; }
 
-dl.area-select-cn dt{
+.theme-default dl.area-select-cn dt{
   float:left;
   line-height:28px;
   height:28px;
 }
 
-dl.area-select-cn .select-input{
+.theme-default dl.area-select-cn .select-input{
   position: relative;
   margin-left:17px;
   float:left;
 }
 
-dl.area-select-cn .select-prompt {
+.theme-default dl.area-select-cn .select-prompt {
   cursor: pointer;
   color:#989898;
   width:119px;
   height:28px;
 }
 
-dl.area-select-cn .select-content{
+.theme-default dl.area-select-cn .select-content{
   letter-spacing: 2px;
   background:url("../area_select_cn/area-bg1.jpg");
   white-space: nowrap;
@@ -41,7 +65,7 @@ dl.area-select-cn .select-content{
   line-height:28px;
   width:94px;
 }
-dl.area-select-cn .select-tangle{
+.theme-default dl.area-select-cn .select-tangle{
   display:block;
   width:25px;
   height:28px;
@@ -49,7 +73,7 @@ dl.area-select-cn .select-tangle{
   background:url("../area_select_cn/area-bg2.jpg");
 }
 
-dl.area-select-cn .select-opts {
+.theme-default dl.area-select-cn .select-opts {
   display:none;
   background-color:#FFFFFF;
   position: absolute;
@@ -64,7 +88,7 @@ dl.area-select-cn .select-opts {
   overflow:auto;
   margin: 0;
 }
-dl.area-select-cn .select-opts li{
+.theme-default dl.area-select-cn .select-opts li{
   padding-left:6px; 
   font-size: 14px;
 /*  height: 24px;*/
@@ -72,6 +96,6 @@ dl.area-select-cn .select-opts li{
   width:110px;
   cursor: pointer;
 }
-dl.area-select-cn .select-opts li:hover { background-color: #D6D6D6; }
-dl.area-select-cn li:actived { background-color: #D6D6D6; }
-dl.area-select-cn .actived  { background-color: #D6D6D6; }
+.theme-default dl.area-select-cn .select-opts li:hover { background-color: #D6D6D6; }
+.theme-default dl.area-select-cn li:actived { background-color: #D6D6D6; }
+.theme-default dl.area-select-cn .actived  { background-color: #D6D6D6; }
