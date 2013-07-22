@@ -1,6 +1,6 @@
-/= form_for AreaSelectCn::Company.new,
-/  :url=>"",:builder => AreaSelectCn::FormBuilder do |f|
-/  = f.area_select_cn :region_code
+= form_for AreaSelectCn::Company.new,
+  :url=>"",:builder => AreaSelectCn::FormBuilder do |f|
+  = f.area_select_cn :region_code
 
 = simple_form_for AreaSelectCn::Company.new, :url=>"",:html => { :class => 'form-horizontal' } do |f|
   = f.input :region_code,:as => :area_select_cn#, :input_html=>{:theme=>:bootstrap,:btn_class=>"btn btn-info"}

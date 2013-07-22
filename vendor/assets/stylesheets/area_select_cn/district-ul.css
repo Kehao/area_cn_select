@@ -1,4 +1,4 @@
-.theme-default .clearfix:after
+.clearfix:after
 {
   content:".";
   display:block;
@@ -7,25 +7,25 @@
   visibility:hidden;
 }
 
-*html .theme-default .clearfix{
+*html .clearfix{
   height:1%;
 }
 
-*+html .theme-default .clearfix{
+*+html .clearfix{
   height:1%;
 }
 
-.theme-default .clearfix
+.clearfix
 {
   display:inline-block;
 }
 
-.theme-default .clearfix {display:block;}
+.clearfix {display:block;}
 
 /** 地区选择 **/
-.theme-default dl.area-select-cn, 
-.theme-default dl.area-select-cn label, 
-.theme-default dl.area-select-cn ul{
+.area_select_cn_theme_default  
+.area_select_cn_theme_default label, 
+.area_select_cn_theme_default ul{
   margin: 0;
   padding: 0;
   border: 0;
@@ -33,28 +33,28 @@
   /*font: inherit;*/
   vertical-align: baseline;
 }
-.theme-default dl.area-select-cn ul{ list-style: none; }
+.area_select_cn_theme_default ul{ list-style: none; }
 
-.theme-default dl.area-select-cn dt{
+.area_select_cn_theme_default label{
   float:left;
   line-height:28px;
   height:28px;
 }
 
-.theme-default dl.area-select-cn .select-input{
+.area_select_cn_theme_default .btn-group{
   position: relative;
   margin-left:17px;
   float:left;
 }
 
-.theme-default dl.area-select-cn .select-prompt {
+.area_select_cn_theme_default .dropdown-toggle {
   cursor: pointer;
-  color:#989898;
+  color:#000033;
   width:119px;
   height:28px;
 }
 
-.theme-default dl.area-select-cn .select-content{
+.area_select_cn_theme_default .dropdown-toggle .select-content{
   letter-spacing: 2px;
   background:url("../area_select_cn/area-bg1.jpg");
   white-space: nowrap;
@@ -65,7 +65,7 @@
   line-height:28px;
   width:94px;
 }
-.theme-default dl.area-select-cn .select-tangle{
+.area_select_cn_theme_default .caret{
   display:block;
   width:25px;
   height:28px;
@@ -73,7 +73,7 @@
   background:url("../area_select_cn/area-bg2.jpg");
 }
 
-.theme-default dl.area-select-cn .select-opts {
+.area_select_cn_theme_default .dropdown-menu {
   display:none;
   background-color:#FFFFFF;
   position: absolute;
@@ -88,14 +88,15 @@
   overflow:auto;
   margin: 0;
 }
-.theme-default dl.area-select-cn .select-opts li{
+.area_select_cn_theme_default .dropdown-menu a{
+  text-decoration: none; 
+  display:block;
   padding-left:6px; 
   font-size: 14px;
-/*  height: 24px;*/
   line-height:24px;
   width:110px;
   cursor: pointer;
+  color: #000033
 }
-.theme-default dl.area-select-cn .select-opts li:hover { background-color: #D6D6D6; }
-.theme-default dl.area-select-cn li:actived { background-color: #D6D6D6; }
-.theme-default dl.area-select-cn .actived  { background-color: #D6D6D6; }
+.area_select_cn_theme_default  .dropdown-menu li:hover { background-color: #D6D6D6; }
+.area_select_cn_theme_default  li.active  { background-color: #D6D6D6; }

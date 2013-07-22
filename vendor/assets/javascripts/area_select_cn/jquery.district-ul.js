@@ -49,6 +49,12 @@
         var $this = $(this);
         var index = jQuery.inArray(this, self.selectPrompts);
         var $selectOpt = $(self.selectOpts[index])
+        var indexes = [0,1,2]
+        $.each (indexes,function(key,value){
+          if(key != index){
+            $(self.selectOpts[key]).hide();
+          }
+        })
         $selectOpt.toggle();
       });
       this.selectOpts.on('click', 'li', function(){
@@ -96,6 +102,7 @@
       this.selectedCounty   = selectedDatas[2];
       this.curDistrict      = this.selectedCounty || this.selectedCity || this.selectedProvince;
     },
+
     requestDistricts: function(code, callback){
       if(this.dataCache[code])
         return callback.call(this, this.dataCache[code]);
@@ -148,10 +155,12 @@
       var self = this;
       var optionEles = [];
       $.each(data, function(i, district){
-        optionEles.push(
-          $(document.createElement("li")).attr(self.options.dataName, district[1])
-                                         .text(district[0])
-        ) 
+        $link = $("<a href=\"javascript:void(0);\">"+district[0]+"</a>");
+        $li = $(document.createElement("li"))
+        .attr(self.options.dataName, district[1])
+        .append($link)
+
+        optionEles.push($li) 
       });
       $.each(optionEles, function(i, ele){
         $select.append(ele);
@@ -193,7 +202,7 @@
       selectContainer:        '.select-input',
       selectOptsContainer:    '.select-opts',
       selectPromptContainer:  '.select-prompt',
-      selectedClass:          'actived',
+      selectedClass:          'active',
       dataName:               'data-value',
       perAjax:                false, //是每次选择区域进行请求，还是一次获得所有区域数据
       url:                    '/area_select_cn/district',

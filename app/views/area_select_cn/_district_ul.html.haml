@@ -1,0 +1,35 @@
+%div{:class=>"area_select_cn area_select_cn_theme_#{theme} clearfix"}
+  - if f.is_a?(AreaSelectCn::FormBuilder)
+    = f.label attr
+  = f.hidden_field attr, :class => "select-value"
+  - [:province,:city,:district].each do |scope|
+    - selected_scope = local_assigns["selected_#{scope}".intern]
+    - selected_scopes = local_assigns["selected_#{scope.to_s.pluralize}".intern]
+    .btn-group{:class=>scope}
+      = link_to "javascript:void(0);",:class=>"#{btn_class} dropdown-toggle clearfix" do
+        - if selected_scope
+          %span.select-content{:data => {:value => selected_scope[1]}} 
+            = selected_scope[0] 
+        - else
+          %span.select-content
+            = scope_prompts[scope]
+        %span.caret
+  
+      %ul{:class => "dropdown-menu"}
+        %li{:class => selected(selected_scope,nil), :data => {:value => ""}}
+          = link_to scope_prompts[scope], "javascript:void(0);"
+        - selected_scopes.map do |scope|
+          %li{ :class => selected(scope[1], selected_scope && selected_scope[1]),
+            :data => {:value => scope[1]}}
+            = link_to  scope[0], "javascript:void(0);"
+
+:javascript
+  jQuery.District(".area_select_cn",{
+    selectContainer:        '.btn-group',
+    selectOptsContainer:    '.dropdown-menu',
+    selectPromptContainer:  '.dropdown-toggle',
+    onChange: function(code){
+      $(".area_select_cn .select-value").val(code);
+    }
+  })
+

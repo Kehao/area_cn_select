@@ -1,7 +1,7 @@
 %div{:class=>"theme-#{theme}"}
   %dl.area-select-cn.clearfix
     = f.hidden_field attr, :class => "select-value"
-    /%dt= f.label attr
+    %dt= f.label attr
     %dd.select-input.province
       .select-prompt
         - if selected_province

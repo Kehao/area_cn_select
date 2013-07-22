@@ -4,7 +4,7 @@ module AreaSelectCn
     def area_select_cn(attr,options = {})
       options[:theme] ||= :default
       options[:btn_class] ||= "btn"
-      @template.render "area_select_cn/#{options[:theme]}", 
+      @template.render "area_select_cn/district_ul", 
         area_select_options(self.object.public_send(attr),options).merge(:f => self,:attr=>attr)
     end
 
