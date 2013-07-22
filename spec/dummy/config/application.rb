@@ -7,9 +7,11 @@ require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+require "pp"
 
 Bundler.require(*Rails.groups)
 require "area_select_cn"
+
 
 module Dummy
   class Application < Rails::Application

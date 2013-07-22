@@ -1,3 +1,6 @@
-= form_for AreaSelectCn::Company.new,
-  :url=>"",:builder => AreaSelectCn::FormBuilder do |f|
-  = f.area_select :region_code
+/= form_for AreaSelectCn::Company.new,
+/  :url=>"",:builder => AreaSelectCn::FormBuilder do |f|
+/  = f.area_select_cn :region_code
+
+= simple_form_for AreaSelectCn::Company.new, :url=>"" do |f|
+  = f.input :region_code,:as => :area_select_cn
