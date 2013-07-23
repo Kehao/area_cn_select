@@ -51,6 +51,7 @@
         var $selectOpt = $(self.selectOpts[index])
         var indexes = [0,1,2]
         $.each (indexes,function(key,value){
+          console.log([key,value])
           if(key != index){
             $(self.selectOpts[key]).hide();
           }

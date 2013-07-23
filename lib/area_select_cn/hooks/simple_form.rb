@@ -6,7 +6,7 @@ module AreaSelectCn
         def input
           options = input_html_options.extract!(:theme,:btn_class)
           if SimpleForm.default_wrapper.eql?(:bootstrap) && options[:theme].nil?
-            options.merge!(:theme => :bootstrap)
+            options.merge!(:theme => :bootstrap,:btn_class=> "btn")
           end
           @builder.area_select_cn(attribute_name,options)
         end
