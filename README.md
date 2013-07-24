@@ -69,7 +69,7 @@ if you want to use the default theme, add it to your application.css:
   2. bootstrap
 
 if you want to use the default theme, add it to your application.css:
-```css
+```console
 *= require area_select_cn/district-ul
 ```
 if you want to use bootstrap theme, you should import bootstrap css.
