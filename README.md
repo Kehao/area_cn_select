@@ -23,33 +23,35 @@
 
 Add it to your Gemfile:
 ```ruby
-  gem 'area_select_cn',:git=>"git@github.com:Kehao/area_select_cn.git"
+gem 'area_select_cn',:git=>"git@github.com:Kehao/area_select_cn.git"
 ```
 
 And then execute:
 ```console
-  bundle install
+bundle install
 ```
 
 ## FormHelper
 ###form_tag
 ```erb
-  <%= form_tag "" do %>
-    <%= area_select_cn(:company,:region_code,"331000",:theme=>:bootstrap,:prompt_class=>"btn btn-danger") %>
-  <% end %>
+<%= form_tag "" do %>
+  <%= area_select_cn(:company,:region_code,"331000",:theme=>:bootstrap,:prompt_class=>"btn btn-danger") %>
+<% end %>
 ```
 
 ###form_for
 ```erb
-  <%= form_for Company.new,:builder => AreaSelectCn::Helpers::FormBuilder do |f| %>
-    <%= f.area_select_cn :region_code%>
-  <%end%>
+<%= form_for Company.new,:builder => AreaSelectCn::Helpers::FormBuilder do |f| %>
+  <%= f.area_select_cn :region_code%>
+<%end%>
 ```
 
 ###simple_form_for
-  <%= simple_form_for Company.new,:html => { :class => 'form-horizontal' } do |f| %>
-    <%= f.input :region_code,:as => :area_select_cn, :input_html=>{:prompt_class=>"btn btn-warning"}%>
-  <% end %>
+```erb
+<%= simple_form_for Company.new,:html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :region_code,:as => :area_select_cn, :input_html=>{:prompt_class=>"btn btn-warning"}%>
+<% end %>
+```
 
 ##Theme
   1. default
