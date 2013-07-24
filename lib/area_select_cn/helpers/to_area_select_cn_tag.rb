@@ -15,13 +15,13 @@ module AreaSelectCn
         body 
       end
 
-      def area_select_cn_javascript_tag(random,html_options)
+      def area_select_cn_javascript_tag(random,opts)
         javascript = <<-JAVASCRIPT
           <script>
              jQuery.District(".#{random}",{
-               selectContainer:        '.#{html_options[:select][:js_class]}',
-               selectOptsContainer:    '.#{html_options[:select_options][:js_class]}',
-               selectPromptContainer:  '.#{html_options[:select_prompt][:js_class]}',
+               selectContainer:        '.#{opts[:select_js_class]}',
+               selectOptsContainer:    '.#{opts[:select_options_js_class]}',
+               selectPromptContainer:  '.#{opts[:select_prompt_js_class]}',
                  onChange: function(code){ $(".#{random} .select-value").val(code); }
             })
           </script>

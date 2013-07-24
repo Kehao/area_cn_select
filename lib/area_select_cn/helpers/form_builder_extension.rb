@@ -12,9 +12,12 @@ module AreaSelectCn
      
       def merge_opts(html_options)
         theme = public_send("#{html_options[:theme] || :default}_theme")
+
+        tmp = {}
         theme.each do |key,value|
-          theme[key][:js_class] = theme[key][:class]
+          tmp["#{key}_js_class".intern] = theme[key][:class]
         end
+        theme.merge! tmp
 
         if html_options[:theme].eql?(:bootstrap) && html_options[:prompt_class].nil?
           html_options[:prompt_class] = "btn"
