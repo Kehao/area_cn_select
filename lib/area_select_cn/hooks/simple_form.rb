@@ -5,10 +5,10 @@ module AreaSelectCn
       class AreaSelectCnInput < SimpleForm::Inputs::Base
         def input
           html_options = input_html_options.extract!(:theme,:prompt_class)
-          if SimpleForm.default_wrapper.eql?(:bootstrap) && options[:theme].nil?
+          if SimpleForm.default_wrapper.eql?(:bootstrap) && html_options[:theme].nil?
             html_options.merge!(:theme => :bootstrap)
           end
-          @builder.area_select_cn(attribute_name,{},html_options)
+          @builder.area_select_cn(attribute_name,html_options)
         end
       end
     end

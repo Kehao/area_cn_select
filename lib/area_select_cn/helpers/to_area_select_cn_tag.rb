@@ -19,9 +19,9 @@ module AreaSelectCn
         javascript = <<-JAVASCRIPT
           <script>
              jQuery.District(".#{random}",{
-               selectContainer:        '.#{opts[:select_js_class]}',
-               selectOptsContainer:    '.#{opts[:select_options_js_class]}',
-               selectPromptContainer:  '.#{opts[:select_prompt_js_class]}',
+               selectContainer:        '.#{opts[:select][:class]}',
+               selectOptsContainer:    '.#{opts[:select_options][:class]}',
+               selectPromptContainer:  '.#{opts[:select_prompt][:class]}',
                  onChange: function(code){ $(".#{random} .select-value").val(code); }
             })
           </script>
@@ -55,8 +55,11 @@ module AreaSelectCn
           scope_link =  @template_object.link_to scope[0],"javascript:void(0);"
           opts << content_tag(:li,scope_link,:class =>area_select_cn_selected(scope[1],selected_scope && selected_scope[1]),:data => {:value => scope[1]}) 
         end
-
-        prompt = @template_object.link_to(pmt.html_safe,"javascript:void(0);", html_options[:select_prompt]) 
+        
+        prompt_class = {
+          :class=>[html_options[:select_prompt][:class],html_options[:prompt_class]].join(" ")
+        }
+        prompt = @template_object.link_to(pmt.html_safe,"javascript:void(0);",html_options[:select_prompt].merge(prompt_class)) 
         select_options = content_tag(:ul,opts.html_safe,html_options[:select_options]) 
 
         select = prompt + select_options
