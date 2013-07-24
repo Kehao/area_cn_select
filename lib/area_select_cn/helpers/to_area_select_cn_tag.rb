@@ -60,7 +60,7 @@ module AreaSelectCn
           :class=>[html_options[:select_prompt][:class],html_options[:prompt_class]].join(" ")
         }
         prompt = @template_object.link_to(pmt.html_safe,"javascript:void(0);",html_options[:select_prompt].merge(prompt_class)) 
-        select_options = content_tag(:ul,opts.html_safe,html_options[:select_options]) 
+        select_options = content_tag(:ul,opts.html_safe,html_options[:select_options].merge(:style=>"max-height:350px;overflow:scroll")) 
 
         select = prompt + select_options
         content_tag(:div,select,html_options[:select])
