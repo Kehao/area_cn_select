@@ -31,6 +31,17 @@ And then execute:
 bundle install
 ```
 
+Add it to your application.js:
+
+```javascript
+//= require area_select_cn/jquery.district-ul
+```
+
+if you want to use the default theme, add it to your application.css:
+```css
+*= require area_select_cn/district-ul
+```
+
 ## FormHelper
 ###form_tag
 ```erb
@@ -56,6 +67,12 @@ bundle install
 ##Theme
   1. default
   2. bootstrap
+
+if you want to use the default theme, add it to your application.css:
+```css
+*= require area_select_cn/district-ul
+```
+if you want to use bootstrap theme, you should import bootstrap css.
 
 ```erb
 <!-- form_tag -->
