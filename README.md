@@ -13,7 +13,7 @@
   2. 支持simple_form
 
 ##TODO
-  1. view helper area_select_cn_tag(done)
+  1. from_tag_helper area_select_cn(done)
   2. 兼容rails 4.0
   3. auto complete 选择器
   4. editable
