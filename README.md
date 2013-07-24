@@ -33,12 +33,12 @@ bundle install
 
 Add it to your application.js:
 
-```javascript
+```console
 //= require area_select_cn/jquery.district-ul
 ```
 
 if you want to use the default theme, add it to your application.css:
-```css
+```console
 *= require area_select_cn/district-ul
 ```
 
