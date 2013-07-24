@@ -1,6 +1,5 @@
 module AreaSelectCn
   class Engine < ::Rails::Engine
-    
   end
 end
 

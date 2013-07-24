@@ -76,6 +76,3 @@ module AreaSelectCn
     end
   end
 end
-#@template.render "area_select_cn/district_ul", 
-#area_select_options(self.object.public_send(attr),options).merge(:f => self,:attr=>attr)
-
