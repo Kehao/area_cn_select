@@ -1,7 +1,9 @@
 # encoding: utf-8
 module AreaSelectCn
-  class FormBuilder < ActionView::Helpers::FormBuilder  
-    include BuilderMethods
+  module Helpers
+    class FormBuilder < ActionView::Helpers::FormBuilder  
+      include FormBuilderExtension
+    end
   end
 end
 

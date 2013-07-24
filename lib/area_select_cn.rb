@@ -5,9 +5,13 @@ module AreaSelectCn
   autoload :Id,                 'area_select_cn/id'
   autoload :Parser,             'area_select_cn/parser'
   autoload :District,           'area_select_cn/district'
-  autoload :BuilderMethods,     'area_select_cn/builder_methods'
-  autoload :FormBuilder,        'area_select_cn/form_builder'
   autoload :Helper,             'area_select_cn/helper'
+
+  module Helpers
+    autoload :FormBuilderExtension,'area_select_cn/helpers/form_builder_extension'
+    autoload :FormBuilder,         'area_select_cn/helpers/form_builder'
+    autoload :ToAreaSelectCnTag,   'area_select_cn/helpers/to_area_select_cn_tag'
+  end
 
   begin
     require 'simple_form'
@@ -21,3 +25,5 @@ module AreaSelectCn
   #  end
   #end
 end
+
+require "area_select_cn/core_ext"

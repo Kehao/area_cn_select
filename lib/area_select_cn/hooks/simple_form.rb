@@ -4,18 +4,18 @@ module AreaSelectCn
     module SimpleFormBuilderExtension
       class AreaSelectCnInput < SimpleForm::Inputs::Base
         def input
-          options = input_html_options.extract!(:theme,:btn_class)
+          html_options = input_html_options.extract!(:theme,:prompt_class)
           if SimpleForm.default_wrapper.eql?(:bootstrap) && options[:theme].nil?
-            options.merge!(:theme => :bootstrap,:btn_class=> "btn")
+            html_options.merge!(:theme => :bootstrap)
           end
-          @builder.area_select_cn(attribute_name,options)
+          @builder.area_select_cn(attribute_name,{},html_options)
         end
       end
     end
   end
 end
 
-::SimpleForm::FormBuilder.send :include, AreaSelectCn::BuilderMethods
+::SimpleForm::FormBuilder.send :include, AreaSelectCn::Helpers::FormBuilderExtension
 ::SimpleForm::FormBuilder.send :include, 
   AreaSelectCn::Hooks::SimpleFormBuilderExtension
 
