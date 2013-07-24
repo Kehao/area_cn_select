@@ -35,7 +35,7 @@ bundle install
 ###form_tag
 ```erb
 <%= form_tag "" do %>
-  <%= area_select_cn(:company,:region_code,"331000",:theme=>:bootstrap,:prompt_class=>"btn btn-danger") %>
+  <%= area_select_cn(:company,:region_code,"331000") %>
 <% end %>
 ```
 
@@ -49,13 +49,24 @@ bundle install
 ###simple_form_for
 ```erb
 <%= simple_form_for Company.new,:html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :region_code,:as => :area_select_cn, :input_html=>{:prompt_class=>"btn btn-warning"}%>
+  <%= f.input :region_code,:as => :area_select_cn}%>
 <% end %>
 ```
 
 ##Theme
   1. default
   2. bootstrap
+
+```erb
+<!-- form_tag -->
+<%= area_select_cn(:company,:region_code,"331000",:theme=>:bootstrap) %>
+
+<!-- form_for -->
+<%= f.area_select_cn :region_code,:theme=>:bootstrap,:prompt_class=>"btn btn-success"%>
+
+<!-- simple_form_for,如果SimpleForm.wrapper等于:bootstrap，默认样式为:bootstrap -->
+<%= f.input :region_code,:as => :area_select_cn,:input_html=>{:theme=>:default}}%>
+```
 
 ##Contributing
 
