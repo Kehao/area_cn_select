@@ -9,10 +9,10 @@
   6. ???
 
 ## Example
-### defaule theme
+### Defaule theme
 ![Default Theme](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/default-theme.png)
 
-### bootstrap theme
+### Bootstrap theme
 ![Bootstrap Theme](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/bootstrap-theme.png)
 
 ##Features
