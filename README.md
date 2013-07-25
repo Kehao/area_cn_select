@@ -14,10 +14,11 @@
 
 ##TODO
   1. from_tag_helper area_select_ul(done)
-  2. 兼容rails 4.0
+  2. 错误处理
   3. auto complete 选择器
   4. editable
-  5. 兼容ie6 
+  5. 兼容rails 4.0
+  6. 兼容ie6 
 
 ##Installation
 
@@ -82,7 +83,7 @@ if you want to use bootstrap theme, you should import bootstrap css.
 <%= f.area_select :region_code,:theme=>:bootstrap,:prompt_class=>"btn btn-success"%>
 
 <!-- simple_form_for,如果SimpleForm.wrapper等于:bootstrap，默认样式为:bootstrap -->
-<%= f.input :region_code,:as => :area_select_ul,:theme=>:default %>
+<%= f.input :region_code,:as => :area_select %>
 ```
 
 ##Contributing
