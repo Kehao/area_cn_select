@@ -1,5 +1,12 @@
 ## 地区选择插件(测试中) [![Gem Version](https://badge.fury.io/rb/area_cn.png)](http://badge.fury.io/rb/area_cn)
-  整理各种地区选择器
+  整理多种地区选择器:
+
+  1. select-ul 模拟下拉菜单(done;testing)
+  2. select 下拉菜单
+  3. auto complete 方式
+  4. 弹出层
+  5. 地图(maybe)
+  6. ???
 
 ## Example ScreenShot
 ### defaule theme
