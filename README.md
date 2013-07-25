@@ -8,7 +8,7 @@
   5. 地图(maybe)
   6. ???
 
-## Example ScreenShot
+## Example
 ### defaule theme
 ![Default Theme](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/default-theme.png)
 
