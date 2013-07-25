@@ -1,5 +1,4 @@
 [![Gem Version](https://badge.fury.io/rb/area_cn.png)](http://badge.fury.io/rb/area_cn)
-
 ## 地区选择插件(测试中) 
   整理多种地区选择器:
 
