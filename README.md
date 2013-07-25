@@ -1,4 +1,4 @@
-## 地区选择插件(测试中) [![Gem Version](https://badge.fury.io/rb/area_cn.png)](http://badge.fury.io/rb/area_cn)
+## 地区选择插件(测试中) 
   整理多种地区选择器:
 
   1. select-ul 模拟下拉菜单(done;testing)
@@ -101,3 +101,4 @@ if you want to use bootstrap theme, you should import bootstrap css.
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
+[![Gem Version](https://badge.fury.io/rb/area_cn.png)](http://badge.fury.io/rb/area_cn)
