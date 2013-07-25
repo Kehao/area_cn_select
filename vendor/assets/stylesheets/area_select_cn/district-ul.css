@@ -1,4 +1,4 @@
-.area_select_cn .clearfix:after
+.area_select_ul .clearfix:after
 {
   content:".";
   display:block;
@@ -7,24 +7,24 @@
   visibility:hidden;
 }
 
-.area_select_cn *html .clearfix{
+.area_select_ul *html .clearfix{
   height:1%;
 }
 
-.area_select_cn *+html .clearfix{
+.area_select_ul *+html .clearfix{
   height:1%;
 }
 
-.area_select_cn .clearfix
+.area_select_ul .clearfix
 {
   display:inline-block;
 }
 
-.area_select_cn .clearfix {display:block;}
+.area_select_ul .clearfix {display:block;}
 
 /** 地区选择 **/
-.area_select_cn,  
-.area-label, ul{
+.area_select_ul,  
+.area-select-label, ul{
   margin: 0;
   padding: 0;
   border: 0;
@@ -32,28 +32,28 @@
   /*font: inherit;*/
   vertical-align: baseline;
 }
-.area_select_cn ul{ list-style: none; }
+.area_select_ul ul{ list-style: none; }
 
-.area-label{
+.area-select-label{
   float:left;
   line-height:28px;
   height:28px;
 }
 
-.area_select_cn .select-input{
+.area_select_ul .select-input{
   position: relative;
   margin-left:17px;
   float:left;
 }
 
-.area_select_cn .select-input .select-prompt {
+.area_select_ul .select-input .select-prompt {
   cursor: pointer;
   color:#000033;
   width:119px;
   height:28px;
 }
 
-.area_select_cn .select-input .select-content{
+.area_select_ul .select-input .select-content{
   letter-spacing: 2px;
   background:url("../area_select_cn/area-bg1.jpg");
   white-space: nowrap;
@@ -64,7 +64,7 @@
   line-height:28px;
   width:94px;
 }
-.area_select_cn .select-input .select-tangle{
+.area_select_ul .select-input .select-tangle{
   display:block;
   width:25px;
   height:28px;
@@ -72,7 +72,7 @@
   background:url("../area_select_cn/area-bg2.jpg");
 }
 
-.area_select_cn .select-input .select-opts{
+.area_select_ul .select-input .select-opts{
   display:none;
   background-color:#FFFFFF;
   position: absolute;
@@ -87,7 +87,7 @@
   overflow:auto;
   margin: 0;
 }
-.area_select_cn .select-input .select-opts a{
+.area_select_ul .select-input .select-opts a{
   text-decoration: none; 
   display:block;
   padding-left:6px; 
@@ -97,5 +97,5 @@
   cursor: pointer;
   color: #000033
 }
-.area_select_cn  .select-input li:hover { background-color: #D6D6D6; }
-.area_select_cn  .select-input li.active  { background-color: #D6D6D6; }
+.area_select_ul  .select-input li:hover { background-color: #D6D6D6; }
+.area_select_ul  .select-input li.active  { background-color: #D6D6D6; }

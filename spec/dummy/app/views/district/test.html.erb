@@ -1,12 +1,12 @@
 <%= form_for AreaSelectCn::Company.new, :url=>"",:builder => AreaSelectCn::Helpers::FormBuilder do |f| %>
-  <%= f.area_select_cn :region_code%>
+  <%= f.area_select :region_code%>
 <%end%>
 
 <%= simple_form_for AreaSelectCn::Company.new, :url=>"",:html => { :class => 'form-horizontal' } do |f|%>
-  <%= f.input :region_code,:as => :area_select_cn, :input_html=>{:prompt_class=>"btn btn-warning"}%>
+  <%= f.input :region_code,:as => :area_select, :prompt_class=>"btn btn-warning"%>
 <%end%>
 
 <%= form_tag "" do %>
-  <%= area_select_cn(:company,:region_code,"331000",:theme=>:bootstrap,:prompt_class=>"btn btn-danger") %>
+  <%= area_select_ul(:company,:region_code,"331000",:theme=>:bootstrap,:prompt_class=>"btn btn-danger") %>
 <%end%>
 

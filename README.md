@@ -13,7 +13,7 @@
   2. 支持simple_form
 
 ##TODO
-  1. from_tag_helper area_select_cn(done)
+  1. from_tag_helper area_select_ul(done)
   2. 兼容rails 4.0
   3. auto complete 选择器
   4. editable
@@ -46,21 +46,21 @@ if you want to use the default theme, add it to your application.css:
 ###form_tag
 ```erb
 <%= form_tag "" do %>
-  <%= area_select_cn(:company,:region_code,"331000") %>
+  <%= area_select_ul(:company,:region_code,"331000") %>
 <% end %>
 ```
 
 ###form_for
 ```erb
 <%= form_for Company.new,:builder => AreaSelectCn::Helpers::FormBuilder do |f| %>
-  <%= f.area_select_cn :region_code%>
+  <%= f.area_select :region_code%>
 <%end%>
 ```
 
 ###simple_form_for
 ```erb
 <%= simple_form_for Company.new,:html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :region_code,:as => :area_select_cn}%>
+  <%= f.input :region_code,:as => :area_select}%>
 <% end %>
 ```
 
@@ -76,13 +76,13 @@ if you want to use bootstrap theme, you should import bootstrap css.
 
 ```erb
 <!-- form_tag -->
-<%= area_select_cn(:company,:region_code,"331000",:theme=>:bootstrap) %>
+<%= area_select_ul(:company,:region_code,"331000",:theme=>:bootstrap) %>
 
 <!-- form_for -->
-<%= f.area_select_cn :region_code,:theme=>:bootstrap,:prompt_class=>"btn btn-success"%>
+<%= f.area_select :region_code,:theme=>:bootstrap,:prompt_class=>"btn btn-success"%>
 
 <!-- simple_form_for,如果SimpleForm.wrapper等于:bootstrap，默认样式为:bootstrap -->
-<%= f.input :region_code,:as => :area_select_cn,:input_html=>{:theme=>:default}}%>
+<%= f.input :region_code,:as => :area_select_ul,:theme=>:default %>
 ```
 
 ##Contributing

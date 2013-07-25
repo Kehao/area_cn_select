@@ -2,25 +2,23 @@
 module ActionView
   module Helpers
     module FormOptionsHelper
-      def area_select_cn(object,method,region_code=nil,options={},html_options={})
-        options.merge!(area_select_options(region_code))
-        html_options = area_select_html_options(html_options)
+      def area_select_ul(object,method,region_code=nil,options={},html_options={})
+        options.merge!(area_select_ul_options(region_code))
+        options.merge!(area_select_ul_theme_options(options))
 
         tag = InstanceTag.new(object, method, self, options.delete(:object))
-        tag.to_area_select_cn_tag(region_code,options,html_options)
+        tag.to_area_select_ul_tag(region_code,options,html_options)
       end
 
-      def area_select_html_options(html_options)
-        theme = AreaSelectCn.public_send("#{html_options[:theme] || :default}_theme")
-
-        if html_options[:theme].eql?(:bootstrap) && html_options[:prompt_class].nil?
-          html_options[:prompt_class] = "btn"
+      def area_select_ul_theme_options(options)
+        theme_options = AreaSelectCn.public_send("#{options[:theme] || :default}_theme")
+        if options[:theme].eql?(:bootstrap) && options[:prompt_class].nil?
+          theme_options[:prompt_class] = "btn"
         end
-
-        theme.merge(html_options)
+        theme_options
       end
 
-      def area_select_options(region_code)
+      def area_select_ul_options(region_code)
         options = {
           :selected_province  => nil,
           :selected_city      => nil,
