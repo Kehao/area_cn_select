@@ -51,7 +51,6 @@
         var $selectOpt = $(self.selectOpts[index])
         var indexes = [0,1,2]
         $.each (indexes,function(key,value){
-          console.log([key,value])
           if(key != index){
             $(self.selectOpts[key]).hide();
           }
@@ -89,9 +88,10 @@
       });
     },
     afterChange: function($opt){
+      var self = this;
       this.resetSelectedValues();
       if(jQuery.type(this.options.onChange) === 'function')
-        this.options.onChange.call($opt, this.curDistrict);
+        this.options.onChange.call($opt,self.districtContainer,this.curDistrict);
     },
     resetSelectedValues: function(){
       var self = this;

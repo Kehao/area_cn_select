@@ -2,10 +2,10 @@
 module AreaSelectCn
   module Helpers
     module ToAreaSelectCnTag
-      def to_area_select_cn_tag(options,html_options)
+      def to_area_select_cn_tag(region_code,options,html_options)
         random = "area_select_cn_#{SecureRandom.hex}"
         body = ''
-        body << to_input_field_tag("hidden",:class => "select-value")
+        body << to_input_field_tag("hidden",:class => "select-value",:value=>region_code)
 
         [:province,:city,:district].each do |scope|
           body << area_select_cn_scope_select(scope,options,html_options)
@@ -22,7 +22,8 @@ module AreaSelectCn
                selectContainer:        '.#{opts[:select][:class]}',
                selectOptsContainer:    '.#{opts[:select_options][:class]}',
                selectPromptContainer:  '.#{opts[:select_prompt][:class]}',
-                 onChange: function(code){ $(".#{random} .select-value").val(code); }
+                 onChange: function($container,code){ 
+                 $container.find(".select-value").val(code); }
             })
           </script>
         JAVASCRIPT

@@ -2,12 +2,12 @@
 module ActionView
   module Helpers
     module FormOptionsHelper
-      def area_select_cn(object,method,region_code=nil,html_options={})
-        options = area_select_options(region_code)
+      def area_select_cn(object,method,region_code=nil,options={},html_options={})
+        options.merge!(area_select_options(region_code))
         html_options = area_select_html_options(html_options)
 
         tag = InstanceTag.new(object, method, self, options.delete(:object))
-        tag.to_area_select_cn_tag(options,html_options)
+        tag.to_area_select_cn_tag(region_code,options,html_options)
       end
 
       def area_select_html_options(html_options)

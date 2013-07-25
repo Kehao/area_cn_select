@@ -24,8 +24,7 @@
 
 /** 地区选择 **/
 .area_select_cn,  
-.area-label,
-.area_select_cn ul{
+.area-label, ul{
   margin: 0;
   padding: 0;
   border: 0;
