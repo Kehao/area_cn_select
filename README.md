@@ -93,6 +93,9 @@ if you want to use bootstrap theme, you should import bootstrap css.
 <!-- simple_form_for,如果SimpleForm.wrapper等于:bootstrap，默认样式为:bootstrap -->
 <%= f.input :region_code,:as => :area_select %>
 ```
+## Resources
+* Chosen(http://harvesthq.github.io/chosen/)
+* X-editable(http://vitalets.github.io/x-editable/demo.html)
 
 ##Contributing
 
