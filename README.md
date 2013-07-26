@@ -11,7 +11,7 @@
 
 ## Example
 
-  Online Demo **http://112.124.38.145:9292/**
+  [Online Demo](http://112.124.38.145:9292).
 
 ##Features
   1. 支持bootstrap  
