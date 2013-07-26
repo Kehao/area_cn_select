@@ -10,11 +10,8 @@
   6. ???
 
 ## Example
-### Defaule theme
-![Default Theme](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/default-theme.png)
 
-### Bootstrap theme
-![Bootstrap Theme](https://raw.github.com/Kehao/area_select_cn/master/vendor/assets/images/area_select_cn/bootstrap-theme.png)
+  Online Demo **http://112.124.38.145:9292/**
 
 ##Features
   1. 支持bootstrap  
