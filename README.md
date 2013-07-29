@@ -19,7 +19,7 @@
 
 ##TODO
   1. from_tag_helper area_select_ul(done)
-  2. 错误处理
+  2. 错误处理(done)
   3. 支持x-editable **http://vitalets.github.io/x-editable/demo.html**
   4. auto complete 选择器
   5. 兼容rails 4.0

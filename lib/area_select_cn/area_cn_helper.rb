@@ -8,7 +8,7 @@ module ActionView
         options.merge!(area_select_ul_theme_options(options))
 
         tag = InstanceTag.new(object, method, self, options.delete(:object))
-        tag.to_area_select_ul_tag(region_code,options,html_options)
+        tag.to_select_district_ul_tag(region_code,options,html_options)
       end
 
       def area_select_ul_theme_options(options)
@@ -48,7 +48,7 @@ module ActionView
       end
     end
 
-    class AreaCnSelector #:nodoc:
+    class AreaCnUlSelector #:nodoc:
       include ActionView::Helpers::TagHelper
       attr_accessor :options,:html_options,:region_code
 
@@ -59,8 +59,18 @@ module ActionView
         @template_object = template_object
       end
       
-      def select_area 
+      def select_district
         [:province,:city,:district].map do |scope|
+          scope_select(scope,options,html_options)
+        end.join("").html_safe
+      end
+
+      def select_province
+          scope_select(:province,options,html_options)
+      end
+
+      def select_city
+        [:province,:city].map do |scope|
           scope_select(scope,options,html_options)
         end.join("").html_safe
       end
@@ -106,13 +116,35 @@ module ActionView
     end
 
     module AreaHelperInstanceTag
-      def to_area_select_ul_tag(region_code,options,html_options)
-        random = "area-select-#{SecureRandom.hex}"
-        body = to_input_field_tag("hidden",:class =>"select-value",:value=>region_code)
-        body << AreaCnSelector.new(@template_object,region_code,options,html_options).select_area
-        body = content_tag(:div,body,:class=>"area_select_ul #{random} clearfix")
-        body << javascript_tag(random,options)
-        body
+      def to_select_district_ul_tag(region_code,options,html_options)
+        to_select(:select_district,region_code,options,html_options)  
+      end
+
+      def to_select_city_ul_tag(region_code,options,html_options)
+        to_select(:select_city,region_code,options,html_options)  
+      end
+
+      def to_select_province_ul_tag(region_code,options,html_options)
+        to_select(:select_province,region_code,options,html_options)  
+      end
+
+      def hidden_field(region_code)
+        to_input_field_tag("hidden",:class =>"select-value",:value=>region_code)
+      end
+
+      def secure_random
+        "area-select-#{SecureRandom.hex}"
+      end
+
+      def to_select(select_scope,region_code,options,html_options)
+        random = secure_random
+        body = [
+          hidden_field(region_code),
+          AreaCnUlSelector.new(@template_object,region_code,options,html_options).public_send(select_scope),
+          javascript_tag(random,options)
+        ].join("")
+
+        content_tag(:div,body.html_safe,:class=>"area_select_ul #{random} clearfix")
       end
 
       def javascript_tag(random,opts)
