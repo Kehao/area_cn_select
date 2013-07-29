@@ -1,6 +1,9 @@
 #encoding: utf-8
 zh-CN:
   activerecord:
+    errors:
+      messages:
+        blank: "不能为空！"
     models:
       area_select_cn/company: "公司"
     attributes:

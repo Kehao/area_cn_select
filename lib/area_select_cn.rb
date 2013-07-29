@@ -7,9 +7,8 @@ module AreaSelectCn
   autoload :District,           'area_select_cn/district'
 
   module Helpers
-    autoload :FormBuilderExtension,'area_select_cn/helpers/form_builder_extension'
-    autoload :FormBuilder,         'area_select_cn/helpers/form_builder'
-    autoload :ToAreaSelectCnTag,   'area_select_cn/helpers/to_area_select_cn_tag'
+    autoload :FormBuilderExtension,   'area_select_cn/helpers/form_builder_extension'
+    autoload :FormBuilder,            'area_select_cn/helpers/form_builder'
   end
 
   mattr_reader :default_theme
@@ -34,11 +33,5 @@ module AreaSelectCn
   rescue LoadError
   end
 
-  #def self.include_helper(scope)
-  #  ActiveSupport.on_load(:action_controller) do
-  #    include scope::Helper if defined?(scope::Helper)
-  #  end
-  #end
 end
-
-require "area_select_cn/action_view_ext"
+require 'area_select_cn/area_cn_helper'
