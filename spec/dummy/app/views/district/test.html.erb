@@ -4,6 +4,9 @@
 
 <%= simple_form_for AreaSelectCn::Company.new, :url=>"",:html => { :class => 'form-horizontal' } do |f|%>
   <%= f.input :region_code,:as => :area_select, :prompt_class=>"btn btn-success"%>
+  <div class="form-actions">
+    <%= f.submit "提交",:class=>"btn"%>
+  </div>
 <%end%>
 
 <%= form_tag "" do %>

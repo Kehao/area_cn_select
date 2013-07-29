@@ -41,4 +41,4 @@ module AreaSelectCn
   #end
 end
 
-require "area_select_cn/core_ext"
+require "area_select_cn/action_view_ext"
