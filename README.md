@@ -82,6 +82,12 @@ id.children
 #=> {"331003"=>{:text=>"黄岩区"}, "331002"=>{:text=>"椒江区"}, "331082"=>{:text=>"临海市"}...}
 
 ```
+### Class methods
+
+```ruby
+AreaSelectCn::Id.select_options("331002")
+# => 返回生成select需要的数据
+```
 
 ## FormHelper
 ###form_tag
