@@ -1,18 +1,54 @@
 # encoding: utf-8
 require 'action_view/helpers/tag_helper'
+require 'action_view/helpers/url_helper'
 module ActionView
   module Helpers
     module FormOptionsHelper 
-      def area_select_ul(object,method,region_code=nil,options={},html_options={})
-        options.merge!(AreaSelectCn::Id.select_options(region_code))
-        options.merge!(area_select_ul_theme_options(options))
-
+      def district_select_ul(object,method,region_code=nil,options={},html_options={})
         tag = InstanceTag.new(object, method, self, options.delete(:object))
-        tag.to_select_district_ul_tag(region_code,options,html_options)
+        tag.to_district_select_ul_tag(region_code,options,html_options)
+      end
+      alias_method :area_select_ul,:district_select_ul
+
+      def city_select_ul(object,method,region_code=nil,options={},html_options={})
+        tag = InstanceTag.new(object, method, self, options.delete(:object))
+        tag.to_city_select_ul_tag(region_code,options,html_options)
       end
 
-      def area_select_ul_theme_options(options)
-        theme_options = AreaSelectCn.public_send("#{options[:theme] || :default}_theme")
+      def province_select_ul(object,method,region_code=nil,options={},html_options={})
+        tag = InstanceTag.new(object, method, self, options.delete(:object))
+        tag.to_province_select_ul_tag(region_code,options,html_options)
+      end
+    end
+
+    class AreaCnUlSelector #:nodoc:
+      include ActionView::Helpers::TagHelper
+      include ActionView::Helpers::UrlHelper
+      attr_accessor :options,:html_options,:region_code
+
+      def initialize(instance_tag,region_code, options = {}, html_options = {})
+        @options      = options.dup.merge(area_options(region_code)).merge(theme_options(options))
+        @html_options = html_options.dup
+        @region_code  = region_code 
+        @instance_tag = instance_tag
+      end
+
+      def area_options(region_code)
+        AreaSelectCn::Id.select_options(region_code)
+      end
+      
+      def hidden_field
+        @instance_tag.to_input_field_tag("hidden",:class =>"select-value",:value=>region_code)
+      end
+
+      def secure_random
+        @secure_random ||= "area-select-#{SecureRandom.hex}"
+      end
+
+      def theme_options(options)
+        theme_options = theme[options[:theme]]
+        theme_options ||= theme[:default]
+
         if options[:theme].eql?(:bootstrap) && options[:prompt_class].nil?
           theme_options[:prompt_class] = "btn"
         else
@@ -20,33 +56,49 @@ module ActionView
         end
         theme_options
       end
-    end
 
-    class AreaCnUlSelector #:nodoc:
-      include ActionView::Helpers::TagHelper
-      attr_accessor :options,:html_options,:region_code
+      def theme
+        AreaSelectCn::Theme.area_select_ul
+      end
 
-      def initialize(template_object,region_code, options = {}, html_options = {})
-        @options      = options.dup
-        @html_options = html_options.dup
-        @region_code  = region_code 
-        @template_object = template_object
+      def javascript_tag
+        javascript = <<-JAVASCRIPT
+          <script>
+             jQuery.District(".#{secure_random}",{
+               selectContainer:        '.#{options[:select][:class]}',
+               selectOptsContainer:    '.#{options[:select_options][:class]}',
+               selectPromptContainer:  '.#{options[:select_prompt][:class]}',
+                 onChange: function($container,code){ 
+                 $container.find(".select-value").val(code); }
+            })
+          </script>
+        JAVASCRIPT
+        javascript
+      end
+
+      def to_select(select_scope)
+        body = [
+          hidden_field,
+          public_send(select_scope),
+          javascript_tag
+        ].join("")
+        content_tag(:div,body.html_safe,:class=>"area_select_ul #{secure_random} clearfix")
       end
       
       def select_district
         [:province,:city,:district].map do |scope|
           scope_select(scope,options,html_options)
-        end.join("").html_safe
+        end.join("")
       end
 
       def select_province
-          scope_select(:province,options,html_options)
+        scope_select(:province,options,html_options)
       end
 
       def select_city
         [:province,:city].map do |scope|
           scope_select(scope,options,html_options)
-        end.join("").html_safe
+        end.join("")
       end
 
       def selected(cur,required,class_name="active")
@@ -69,18 +121,18 @@ module ActionView
         pmt << content_tag(:span,"",options[:caret])
 
         opts = '' 
-        blank_link = @template_object.link_to(blank_prompts[scope],"javascript:void(0);")
+        blank_link = link_to(blank_prompts[scope],"javascript:void(0);")
         opts << content_tag(:li,blank_link,:class =>selected(selected_scope,nil), :data=>{:value => ""}) 
 
         selected_scopes.each do |scope|
-          scope_link =  @template_object.link_to scope[0],"javascript:void(0);"
+          scope_link =  link_to scope[0],"javascript:void(0);"
           opts << content_tag(:li,scope_link,:class =>selected(scope[1],selected_scope && selected_scope[1]),:data => {:value => scope[1]}) 
         end
 
         prompt_class = {
           :class=>[options[:select_prompt][:class],options[:prompt_class]].join(" ")
         }
-        prompt = @template_object.link_to(pmt.html_safe,"javascript:void(0);",options[:select_prompt].merge(prompt_class)) 
+        prompt = link_to(pmt.html_safe,"javascript:void(0);",options[:select_prompt].merge(prompt_class)) 
         select_options = content_tag(:ul,opts.html_safe,options[:select_options].merge(:style=>"max-height:350px;overflow:scroll")) 
 
         select = prompt + select_options
@@ -90,52 +142,17 @@ module ActionView
     end
 
     module AreaHelperInstanceTag
-      def to_select_district_ul_tag(region_code,options,html_options)
-        to_select(:select_district,region_code,options,html_options)  
+      def to_district_select_ul_tag(region_code,options,html_options)
+        AreaCnUlSelector.new(self,region_code,options,html_options).to_select(:select_district)  
       end
 
-      def to_select_city_ul_tag(region_code,options,html_options)
-        to_select(:select_city,region_code,options,html_options)  
+      def to_city_select_ul_tag(region_code,options,html_options)
+        AreaCnUlSelector.new(self,region_code,options,html_options).to_select(:select_city)  
       end
 
-      def to_select_province_ul_tag(region_code,options,html_options)
-        to_select(:select_province,region_code,options,html_options)  
+      def to_province_select_ul_tag(region_code,options,html_options)
+        AreaCnUlSelector.new(self,region_code,options,html_options).to_select(:select_province)  
       end
-
-      def hidden_field(region_code)
-        to_input_field_tag("hidden",:class =>"select-value",:value=>region_code)
-      end
-
-      def secure_random
-        "area-select-#{SecureRandom.hex}"
-      end
-
-      def to_select(select_scope,region_code,options,html_options)
-        random = secure_random
-        body = [
-          hidden_field(region_code),
-          AreaCnUlSelector.new(@template_object,region_code,options,html_options).public_send(select_scope),
-          javascript_tag(random,options)
-        ].join("")
-
-        content_tag(:div,body.html_safe,:class=>"area_select_ul #{random} clearfix")
-      end
-
-      def javascript_tag(random,opts)
-        javascript = <<-JAVASCRIPT
-          <script>
-             jQuery.District(".#{random}",{
-               selectContainer:        '.#{opts[:select][:class]}',
-               selectOptsContainer:    '.#{opts[:select_options][:class]}',
-               selectPromptContainer:  '.#{opts[:select_prompt][:class]}',
-                 onChange: function($container,code){ 
-                 $container.find(".select-value").val(code); }
-            })
-          </script>
-        JAVASCRIPT
-        javascript.html_safe
-      end
-
     end
 
     class InstanceTag #:nodoc:

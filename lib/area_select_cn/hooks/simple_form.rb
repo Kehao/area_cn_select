@@ -2,15 +2,37 @@
 module AreaSelectCn
   module Hooks
     module SimpleFormBuilderExtension
-      class AreaSelectInput < SimpleForm::Inputs::Base
-        def input
+      class AreaSelectBase < SimpleForm::Inputs::Base
+        def scope_input(scope)
           opts = options.extract!(:theme,:prompt_class)
           if SimpleForm.default_wrapper.eql?(:bootstrap) && opts[:theme].nil?
             opts.merge!(:theme => :bootstrap)
           end
-          @builder.area_select_ul(attribute_name,opts)
+          @builder.public_send(scope,attribute_name,opts)
         end
       end
+
+      class AreaSelectUlInput < AreaSelectBase
+        def input
+          scope_input(:area_select_ul) 
+        end
+      end
+
+      class AreaSelectInput < AreaSelectUlInput
+
+      end
+
+      class CitySelectUlInput < AreaSelectBase
+        def input
+          scope_input(:city_select_ul) 
+        end
+      end
+      class ProvinceSelectUlInput < AreaSelectBase
+        def input
+          scope_input(:province_select_ul) 
+        end
+      end
+
     end
   end
 end
