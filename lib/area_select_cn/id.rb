@@ -1,39 +1,20 @@
 #encoding: utf-8
 module AreaSelectCn
   class Id
-    Root = "000000"
-    attr_reader :id,:data
-
-    def data
-      @data ||= Parser.list
-    end
+    include SelectOptions
+    attr_reader :id
 
     def area_name(mark="-")
       [province_name,city_name,district_name].compact.join(mark) 
     end
-
-    def get_name
+    
+    def get_text
       get[:text]
     end
+    alias_method :get_name,:get_text
 
-    def selected_provinces
-      data.map do |province_id,province_hash|
-        [province_hash[:text],province_id]
-      end
-    end
-
-    def selected_cities
-      return [] unless province
-      province[:children].map do |city_id,city_hash|
-        [city_hash[:text],city_id]
-      end
-    end
-
-    def selected_districts
-      return [] unless city 
-      city[:children].map do |district_id,district_hash| 
-        [district_hash[:text],district_id]
-      end
+    def get_children
+      get[:children]
     end
 
     def get
@@ -65,7 +46,7 @@ module AreaSelectCn
 
     def province
       @province ||=
-      province_id && data && data[province_id]
+      province_id && self.class.data && self.class.data[province_id]
     end
 
     def city
@@ -114,6 +95,14 @@ module AreaSelectCn
     end
 
     class << self
+      def parser
+        @parser ||= Parser
+      end
+
+      def data
+        @data ||= parser.list
+      end
+
       def id_regular
         /(\d{2})(\d{2})(\d{2})/ 
       end

@@ -6,9 +6,10 @@ module AreaSelectCn
       end
 
       def list_provinces
-        list.map do |province_id,province_hash|
+        @list_provinces ||=
+          list.map do |province_id,province_hash|
           [province_hash[:text],province_id]
-        end
+          end
       end
 
       def parser 
