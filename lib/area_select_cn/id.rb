@@ -12,10 +12,12 @@ module AreaSelectCn
       get[:text]
     end
     alias_method :get_name,:get_text
+    alias_method :name,:get_text
 
     def get_children
       get[:children]
     end
+    alias_method :children,:get_children
 
     def get
       @get ||= province? && province
@@ -58,15 +60,15 @@ module AreaSelectCn
     end
 
     def province?
-      province_id && city_id.nil?
+      !!(province_id && city_id.nil?)
     end
 
     def city?
-      province_id && city_id && district_id.nil?
+      !!(province_id && city_id && district_id.nil?)
     end
 
     def district?
-      province_id && city_id && district_id
+      !!(province_id && city_id && district_id)
     end
 
     def province_id

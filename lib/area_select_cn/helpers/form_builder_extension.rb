@@ -2,11 +2,6 @@
 module AreaSelectCn
   module Helpers
     module FormBuilderExtension
-      def district_select(method,options={},html_options={})
-        label = self.label method,:class=>"area-select-label"
-        label + area_select_ul(method,options,html_options)
-      end
-      alias_method :area_select,:district_select 
 
       def district_select_ul(method,options={},html_options={})
         region_code = self.object.public_send(method)

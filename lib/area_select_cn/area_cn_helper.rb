@@ -82,7 +82,7 @@ module ActionView
           public_send(select_scope),
           javascript_tag
         ].join("")
-        content_tag(:div,body.html_safe,:class=>"area_select_ul #{secure_random} clearfix")
+        @instance_tag.content_tag(:div,body.html_safe,:class=>"#{secure_random}")
       end
       
       def select_district
@@ -136,7 +136,8 @@ module ActionView
         select_options = content_tag(:ul,opts.html_safe,options[:select_options].merge(:style=>"max-height:350px;overflow:scroll")) 
 
         select = prompt + select_options
-        content_tag(:div,select,options[:select])
+        select_class = options[:select][:class]
+        content_tag(:div,select,options[:select].merge(:class=>[select_class,scope].join(" ")))
       end
 
     end

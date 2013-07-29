@@ -24,8 +24,8 @@
 
 /** 地区选择 **/
 .area_select_ul,  
-.area-select-label, ul{
-  margin: 0;
+.area_select_ul .control-label, 
+.area_select_ul ul{
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -33,17 +33,17 @@
   vertical-align: baseline;
 }
 .area_select_ul ul{ list-style: none; }
-
-.area-select-label{
+.area_select_ul .control-label{
   float:left;
-  line-height:28px;
-  height:28px;
 }
 
 .area_select_ul .select-input{
   position: relative;
   margin-left:17px;
   float:left;
+}
+.area_select_ul .province{
+  margin-left:0;
 }
 
 .area_select_ul .select-input .select-prompt {

@@ -12,13 +12,13 @@ module AreaSelectCn
         end
       end
 
-      class AreaSelectUlInput < AreaSelectBase
+      class DistrictSelectUlInput < AreaSelectBase
         def input
           scope_input(:area_select_ul) 
         end
       end
 
-      class AreaSelectInput < AreaSelectUlInput
+      class AreaSelectInput < DistrictSelectUlInput
 
       end
 
