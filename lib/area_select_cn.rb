@@ -6,7 +6,7 @@ module AreaSelectCn
   autoload :Parser,             'area_select_cn/parser'
   autoload :District,           'area_select_cn/district'
   autoload :Id,                 'area_select_cn/id'
-  autoload :Theme,                 'area_select_cn/theme'
+  autoload :Theme,              'area_select_cn/theme'
 
   module Helpers
     autoload :FormBuilderExtension,   'area_select_cn/helpers/form_builder_extension'
