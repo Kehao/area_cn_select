@@ -8,7 +8,7 @@ module AreaSelectCn
           if SimpleForm.default_wrapper.eql?(:bootstrap) && opts[:theme].nil?
             opts.merge!(:theme => :bootstrap)
           end
-          @builder.public_send(scope,attribute_name,opts)
+          @builder.public_send(scope,attribute_name,opts.merge(:simple_form=>true))
         end
       end
 

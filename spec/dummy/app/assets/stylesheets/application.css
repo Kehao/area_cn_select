@@ -12,3 +12,11 @@
  *= require area_select_cn/district-ul
  *= require_tree .
  */
+
+.field_with_errors{
+  color: red;
+}
+.field_with_errors .controls{
+ border: 1px solid red;
+}
+

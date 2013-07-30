@@ -41,6 +41,7 @@ module ActionView
         @instance_tag.to_input_field_tag("hidden",:class =>"select-value",:value=>region_code)
       end
 
+
       def secure_random
         @secure_random ||= "area-select-#{SecureRandom.hex}"
       end
@@ -76,19 +77,40 @@ module ActionView
         javascript
       end
 
+      def controls(select_scope)
+        @instance_tag.content_tag(:div,select(select_scope),:class=>"controls clearfix")
+      end
+
+      def label
+        @instance_tag.to_label_tag(nil,:class=>"control-label") 
+      end
+
+      def control_group(select_scope)
+        group = [label,controls(select_scope)]
+        content_tag(:div,group.join.html_safe,:class=>"control-group area_select_ul") 
+      end
+
       def to_select(select_scope)
+        if options[:simple_form]
+          select(select_scope)
+        else
+          control_group(select_scope)
+        end
+      end
+
+      def select(select_scope)
         body = [
           hidden_field,
           public_send(select_scope),
           javascript_tag
-        ].join("")
-        @instance_tag.content_tag(:div,body.html_safe,:class=>"#{secure_random}")
+        ].join
+        content_tag(:div,body.html_safe,:class=>"#{secure_random}")
       end
       
       def select_district
         [:province,:city,:district].map do |scope|
           scope_select(scope,options,html_options)
-        end.join("")
+        end.join
       end
 
       def select_province
@@ -143,6 +165,7 @@ module ActionView
     end
 
     module AreaHelperInstanceTag
+
       def to_district_select_ul_tag(region_code,options,html_options)
         AreaCnUlSelector.new(self,region_code,options,html_options).to_select(:select_district)  
       end

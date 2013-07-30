@@ -1,7 +1,6 @@
 # encoding: utf-8
 class AreaSelectCnCompaniesController < ApplicationController
   def index
-
   end
 
   def new
@@ -13,7 +12,7 @@ class AreaSelectCnCompaniesController < ApplicationController
     @company= AreaSelectCn::Company.new(params[:area_select_cn_company])
     respond_to do |format|
       if @company.save
-        format.html { redirect_to :new,notice: "添加成功" }
+        format.html { redirect_to new_area_select_cn_company_path,notice: "添加成功" }
       else
         format.html { render action: "edit"}
       end
