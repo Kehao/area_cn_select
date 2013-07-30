@@ -6,8 +6,6 @@
   2. select 下拉菜单
   3. auto complete 方式
   4. 弹出层
-  5. 地图(maybe)
-  6. ???
 
 ## Example
 
@@ -20,8 +18,8 @@
 ##TODO
   1. from_tag_helper district_select_ul(done)
   2. 错误处理(done)
-  3. 支持x-editable **http://vitalets.github.io/x-editable/demo.html**
-  4. auto complete 选择器
+  3. auto complete 选择器
+  4. 支持x-editable **http://vitalets.github.io/x-editable/demo.html**
   5. 兼容rails 4.0
   6. 兼容ie6 
 
