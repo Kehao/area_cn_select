@@ -152,6 +152,7 @@ if you want to use bootstrap theme, you should import bootstrap css.
 * X-editable(http://vitalets.github.io/x-editable/demo.html)
 * Jquery-addresspicker(http://xilinus.com/jquery-addresspicker/demos/index.html)
 * Jquery-Autocomplete(https://github.com/devbridge/jQuery-Autocomplete)
+* Jquery-tokeninput(https://github.com/loopj/jquery-tokeninput)
 
 ##Contributing
 
