@@ -150,6 +150,7 @@ if you want to use bootstrap theme, you should import bootstrap css.
 ## Resources
 * Chosen(http://harvesthq.github.io/chosen/)
 * X-editable(http://vitalets.github.io/x-editable/demo.html)
+* Jquery-addresspicker(http://xilinus.com/jquery-addresspicker/demos/index.html)
 
 ##Contributing
 
