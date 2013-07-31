@@ -155,6 +155,8 @@ if you want to use bootstrap theme, you should import bootstrap css.
 * Jquery-tokeninput(https://github.com/loopj/jquery-tokeninput)
 * Jquery-ui(http://jqueryui.com/autocomplete/)
 * Select2(http://ivaynberg.github.io/select2/)
+* typeahead.js(https://github.com/twitter/typeahead.js/)
+
 
 ##Contributing
 
