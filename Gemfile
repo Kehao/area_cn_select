@@ -15,6 +15,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'select2-rails'
+gem 'twitter-bootstrap-rails', ">= 2.1.8"
+
 group :development, :test do
   gem "spork"
   gem "spork-rails"
@@ -26,9 +29,7 @@ end
 
 gem 'therubyracer'
 gem 'less-rails'
-
 gem 'simple_form'
-gem 'twitter-bootstrap-rails', ">= 2.1.8"
 
 # Declare any dependencies that are still in development here instead of in
 # your gemspec. These might include edge Rails or gems from your path or

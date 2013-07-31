@@ -7,13 +7,6 @@
   visibility:hidden;
 }
 
-.area_select_ul *html .clearfix{
-  height:1%;
-}
-
-.area_select_ul *+html .clearfix{
-  height:1%;
-}
 
 .area_select_ul .clearfix
 {

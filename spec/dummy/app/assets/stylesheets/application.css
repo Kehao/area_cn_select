@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require area_select_cn/district-ul
+ *= require select2
  *= require_tree .
  */
 
