@@ -87,6 +87,17 @@ AreaSelectCn::Id.select_options("331002")
 # => 返回生成select需要的数据
 ```
 
+## AreaSelectCn::District
+### search area
+```ruby
+results = AreaSelectCn::District.search("椒江")
+# => [#<AreaSelectCn::Id:0x007fbcff098490 @id="331002">]
+results.first.name
+# => "椒江区"
+results.first.area_name("/")
+# => "浙江省/台州市/椒江区"
+```
+
 ## FormHelper
 ###form_tag
 ```erb
