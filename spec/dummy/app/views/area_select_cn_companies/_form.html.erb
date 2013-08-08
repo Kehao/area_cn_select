@@ -1,4 +1,4 @@
-<!--<div class="span7 alert">
+<div class="span7 alert">
 <%= form_for @company,:builder => AreaSelectCn::Helpers::FormBuilder,:html => { :class => 'form-horizontal' } do |f| %>
   <legend>form_for</legend>
   <%= f.district_select_ul :region_code%>
@@ -16,13 +16,13 @@
 <%end%>
 
 <%= form_tag "",:class => 'form-horizontal'  do %>
-  <legend>simple_tag</legend>
+  <legend>form_tag</legend>
   <%= district_select_ul(:company,:region_code,"331000",:theme=>:bootstrap,:prompt_class=>"btn btn-danger") %>
   <div class="form-actions">
     <%= submit_tag "提交",:class=>"btn btn-success"%>
   </div>
 <%end%>
-</div-->
+</div>
 
 <div class="span5">
 <div id="e1" data-value="331002">

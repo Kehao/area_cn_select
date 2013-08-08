@@ -1,7 +1,10 @@
 #encoding: utf-8
 require 'spec_helper'
 describe AreaSelectCn::Parser do
-  context "area list" do
+  context "areas" do
+    subject { AreaSelectCn::Parser.areas }
+  end
+  context "list" do
     before {@code = "331002"}
     subject { AreaSelectCn::Parser.list }
     it "['330000'] should return cities" do

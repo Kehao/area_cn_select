@@ -23,7 +23,7 @@ module AreaSelectCn
       @get ||= province? && province
       @get ||= city? && city
       @get ||= district? && district
-      @get
+      @get || nil
     end
 
     def province_name

@@ -52,7 +52,6 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rails'
 require 'factory_girl_rails'
-require 'haml'
 
 Rails.backtrace_cleaner.remove_silencers!
 Capybara.javascript_driver = :webkit
