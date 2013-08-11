@@ -8,7 +8,6 @@
   4. 弹出层
 
 ## Example
-
   [Online Demo](http://112.124.38.145:9292).
 
 ##Features
