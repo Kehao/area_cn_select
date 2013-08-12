@@ -2,10 +2,8 @@
 ## 地区选择插件(测试中) 
   整理多种地区选择器:
 
-  1. select-ul 模拟下拉菜单(done;testing)
-  2. select 下拉菜单
-  3. auto complete 方式
-  4. 弹出层
+  1. select-ul 模拟下拉菜单
+  2. auto complete 方式(select2)
 
 ## Example
   [Online Demo](http://112.124.38.145:9292).
@@ -13,11 +11,12 @@
 ##Features
   1. 支持bootstrap  
   2. 支持simple_form
+  3. 支持select2
 
 ##TODO
   1. from_tag_helper district_select_ul(done)
   2. 错误处理(done)
-  3. auto complete 选择器
+  3. auto complete 选择器(doing)
   4. 支持x-editable **http://vitalets.github.io/x-editable/demo.html**
   5. 兼容rails 4.0
   6. 兼容ie6 
