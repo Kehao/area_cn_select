@@ -1,4 +1,4 @@
-<!--div class="span7 alert">
+<div class="span7 alert">
 <%= form_for @company,:builder => AreaSelectCn::Helpers::FormBuilder,:html => { :class => 'form-horizontal' } do |f| %>
   <legend>form_for</legend>
   <%= f.district_select_ul :region_code%>
@@ -22,11 +22,11 @@
     <%= submit_tag "提交",:class=>"btn btn-success"%>
   </div>
 <%end%>
-</div-->
+</div>
 
-<div class="span5">
+<div class="span3">
 <!--div id="e1" multiple data-value="331002" > </div-->
-<input type="hidden" id="e1"  tabindex="-1" value="" />
+<input type="hidden" id="e1"  tabindex="-1" value="331002" />
 
 <script>
   $(document).ready(function() { 
@@ -35,8 +35,7 @@
   $("#e1").select2({
       minimumInputLength: 1,
       placeholder: "请选择地区",
-      cache: true,
-      width:"90%", 
+      width:"100%", 
       matcher: function(term, text, opt) {
         return text.toUpperCase().indexOf(term.toUpperCase())>=0
         || opt.attr("alt").toUpperCase().indexOf(term.toUpperCase())>=0;
