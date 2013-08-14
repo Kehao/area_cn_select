@@ -4,6 +4,7 @@
 
   1. select-ul 模拟下拉菜单
   2. auto complete 方式(select2)
+  3. select(not done)
 
 ## Example
   [Online Demo](http://112.124.38.145:9292).
