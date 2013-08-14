@@ -41,7 +41,7 @@
         || opt.attr("alt").toUpperCase().indexOf(term.toUpperCase())>=0;
       },
       ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-        url: "http://localhost:9292/area_select_cn/district/search",
+        url: "/area_select_cn/district/search",
         dataType: 'json',
         data: function (term, page) {
           return {
@@ -58,7 +58,7 @@
     initSelection: function(element, callback) {
       var region_code=$(element).attr('value');
       if (region_code!=="") {
-        $.ajax("http://localhost:9292/area_select_cn/district?region_code="+region_code, {
+        $.ajax("/area_select_cn/district?region_code="+region_code, {
           data: {},
           dataType: "json"
         }).done(function(data) { callback(data); });
