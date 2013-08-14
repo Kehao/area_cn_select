@@ -48,7 +48,7 @@ if you want to use the default theme, add it to your application.css:
 ### new 
 ```ruby
 id = AreaSelectCn::Id.new("331002")  
-#=> #<AreaSelectCn::Id:0x007ff87b9c4bb0 @id="331000">
+#=> #<AreaSelectCn::Id:0x007ff87b9c4bb0 @id="331002">
 # or
 id = AreaSelectCn::District.id("331002")
 #=> #<AreaSelectCn::Id:0x007ff87b9cbed8 @id="331002">
