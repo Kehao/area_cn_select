@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split($\)
   s.executables   = s.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   s.test_files    = s.files.grep(%r{^(test|spec|features)/})
+  s.license       = 'MIT'
 
   s.add_dependency "rails", "~> 3.2.13"
 end
