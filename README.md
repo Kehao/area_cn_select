@@ -19,7 +19,7 @@
   2. 错误处理(done)
   3. auto complete 选择器(doing)
   4. add Foundation theme(http://foundation.zurb.com/)
-  5. 支持x-editable **http://vitalets.github.io/x-editable/demo.html**
+  5. 支持x-editable(http://vitalets.github.io/x-editable/demo.html)
   6. 兼容rails 4.0
 
 ##Installation
