@@ -12,7 +12,7 @@
 ##Features
   1. 支持bootstrap  
   2. 支持simple_form
-  3. 支持select2
+  3. 支持select2(not done)
 
 ##TODO
   1. from_tag_helper district_select_ul(done)
