@@ -66,13 +66,21 @@ module ActionView
       def javascript_tag
         javascript = <<-JAVASCRIPT
           <script>
-             jQuery.District(".#{secure_random}",{
-               selectContainer:        '.#{options[:select][:class]}',
-               selectOptsContainer:    '.#{options[:select_options][:class]}',
-               selectPromptContainer:  '.#{options[:select_prompt][:class]}',
-                 onChange: function($container,code){ 
-                 $container.find(".select-value").val(code); }
-            })
+            if(window.AREA_SELECT_CN_FIELDS === undefined) {
+              window.AREA_SELECT_CN_FIELDS = [];
+            }
+            window.AREA_SELECT_CN_FIELDS.push(
+              [".#{secure_random}",
+                {
+                  selectContainer:        '.#{options[:select][:class]}',
+                  selectOptsContainer:    '.#{options[:select_options][:class]}',
+                  selectPromptContainer:  '.#{options[:select_prompt][:class]}',
+                  onChange: function($container,code){
+                    $container.find(".select-value").val(code);
+                  }
+                }
+              ]
+            );
           </script>
         JAVASCRIPT
         javascript
