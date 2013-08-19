@@ -5,6 +5,5 @@ module AreaSelectCn
     self.table_name = "area_select_cn_companies"
 
     validates :region_code, presence: true
-
   end
 end

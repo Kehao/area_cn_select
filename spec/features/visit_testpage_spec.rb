@@ -1,48 +1,32 @@
 #encoding: utf-8
 require 'spec_helper'
 
-feature 'visit the testpage' do
+TEST_CODE = "340000"
 
+feature 'visit the testpage' do
   scenario 'page should init district-ul select' do
     visit "/" 
-    wait
     assert_select_exist
-    assert_district_ul(init_id)
+    assert_district_ul(TEST_CODE)
   end
 
   scenario 'page should init other district-ul select' do
-    test_code = "340000"
-    AreaSelectCn::Company.test_region_code = test_code
-    visit "/" 
-    wait
-    assert_district_ul(AreaSelectCn::District.id(test_code))
+    visit "/"
+    assert_district_ul(AreaSelectCn::District.id(TEST_CODE))
   end
 
   scenario 'select area',:driver => :webkit do
     visit "/" 
-    wait
     { :province => ["安徽省","340000"],
       :city     => ["合肥市","340100"],
       :district => ["瑶海区","340102"] 
-    }.each do |_scope,area|
+    }.each do |scope,area|
       page.execute_script(%Q{jQuery("li[data-value='#{area[1]}']").click();})
       assert_district_ul(AreaSelectCn::District.id(area[1]))
     end
 
     #page.execute_script(%Q{jQuery("li[data-value='310000']").click();})
     #assert_district_ul(AreaSelectCn::District.id('310000'))
-  end
-
-  def wait
-    sleep(2)
-  end
-
-  def init_code
-    AreaSelectCn::Company.test_region_code
-  end
-
-  def init_id
-    AreaSelectCn::District.id(init_code)
   end
 
   def province_blank
@@ -95,5 +79,4 @@ feature 'visit the testpage' do
       [li.text,li['data-value']]
     end.sort
   end
-
 end
