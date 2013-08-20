@@ -100,6 +100,34 @@ results.first.name
 results.first.area_name("/")
 # => "浙江省/台州市/椒江区"
 ```
+## 使用acts_as_area_field 简化调用
+company.rb
+```ruby
+class Company < ActiveRecord::Base
+  attr_accessor :region_code
+  attr_accessible :region_code
+
+  acts_as_area_field :region_code #增加这一行
+  validates :region_code, presence: true
+end
+```
+```ruby
+company = Company.new
+company.region_code = 331002
+#不使用acts_as_area_field
+company.region_code 
+#=> 331002
+AreaSelectCn::Id(company.region_code).name
+#=> "椒江区"
+
+#使用acts_as_area_field
+company.region_code 
+#返回AreaSelectCn::Id对像
+#=> #<AreaSelectCn::Id:0x007fb7a4c0e960 @value=331002, @code="331002">
+company.region_code.name
+#=> "椒江区"
+```
+
 
 ## FormHelper
 ###form_tag
