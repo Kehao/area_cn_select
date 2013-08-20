@@ -7,11 +7,6 @@ gemspec
 
 # jquery-rails is used by the dummy application
 gem "sqlite3"
-
-gem 'select2-rails'
-gem 'bootstrap-sass'
-gem 'font-awesome-rails'
-
 group :development, :test do
   gem "spork"
   gem "spork-rails"
@@ -21,12 +16,17 @@ group :development, :test do
   gem "factory_girl_rails"
 end
 
-gem 'jquery-rails'
 gem 'therubyracer'
+gem 'uglifier', '>= 1.0.3'
+
+gem 'jquery-rails'
 gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
-gem 'uglifier', '>= 1.0.3'
 gem 'less-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+
+gem 'select2-rails'
 gem 'simple_form'
 
 # Declare any dependencies that are still in development here instead of in
