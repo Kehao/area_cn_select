@@ -38,15 +38,6 @@ module ActionView
         AreaSelectCn::Id.select_options(region_code)
       end
 
-      def hidden_field
-        @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code)
-      end
-
-
-      def secure_random
-        @secure_random ||= "area-select-#{SecureRandom.hex}"
-      end
-
       def theme_options(options)
         theme_options = theme[options[:theme]]
         theme_options ||= theme[:default]
@@ -57,6 +48,14 @@ module ActionView
           theme_options[:prompt_class] = options[:prompt_class]
         end
         theme_options
+      end
+
+      def hidden_field
+        @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code)
+      end
+
+      def secure_random
+        @secure_random ||= "area-select-#{SecureRandom.hex}"
       end
 
       def theme
@@ -87,7 +86,7 @@ module ActionView
       end
 
       def controls(select_scope)
-        @instance_tag.content_tag(:div, select(select_scope), :class => "controls clearfix")
+        @instance_tag.content_tag(:div, select(select_scope), :class => "controls")
       end
 
       def label
@@ -129,7 +128,7 @@ module ActionView
       def select_city
         [:province, :city].map do |scope|
           scope_select(scope, options, html_options)
-        end.join("")
+        end.join
       end
 
       def selected(cur, required, class_name="active")
