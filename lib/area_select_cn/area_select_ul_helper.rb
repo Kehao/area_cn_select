@@ -21,7 +21,7 @@ module ActionView
       end
     end
 
-    class AreaCnUlSelector #:nodoc:
+    class AreaCnSelectUlSelector #:nodoc:
       include ActionView::Helpers::TagHelper
       include ActionView::Helpers::UrlHelper
       attr_accessor :options, :html_options, :region_code
@@ -48,8 +48,6 @@ module ActionView
         end
         theme_options
       end
-
-      
 
       def secure_random
         @secure_random ||= "area-select-#{SecureRandom.hex}"
@@ -163,23 +161,23 @@ module ActionView
 
     end
 
-    module AreaHelperInstanceTag
+    module SelectUlHelperInstanceTag
 
       def to_district_select_ul_tag(region_code, options, html_options)
-        AreaCnUlSelector.new(self, region_code, options, html_options).to_select(:select_district)
+        AreaCnSelectUlSelector.new(self, region_code, options, html_options).to_select(:select_district)
       end
 
       def to_city_select_ul_tag(region_code, options, html_options)
-        AreaCnUlSelector.new(self, region_code, options, html_options).to_select(:select_city)
+        AreaCnSelectUlSelector.new(self, region_code, options, html_options).to_select(:select_city)
       end
 
       def to_province_select_ul_tag(region_code, options, html_options)
-        AreaCnUlSelector.new(self, region_code, options, html_options).to_select(:select_province)
+        AreaCnSelectUlSelector.new(self, region_code, options, html_options).to_select(:select_province)
       end
     end
 
     class InstanceTag #:nodoc:
-      include AreaHelperInstanceTag
+      include SelectUlHelperInstanceTag
     end
 
   end
