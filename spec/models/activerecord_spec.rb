@@ -62,5 +62,11 @@ describe AreaSelectCn::ActsAsAreaSelectable do
     expect(subject.loc_code).not_to be_instance_of(AreaSelectCn::Id)
   end
 
+  it "should be unvalid when region_code is blank" do
+    subject.region_code = nil 
+    expect(subject).not_to be_valid
+    expect(subject.save).to be_false
+  end
+
 end
 
