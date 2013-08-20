@@ -8,7 +8,6 @@ module ActionView
         tag = InstanceTag.new(object, method, self, options.delete(:object))
         tag.to_district_select_ul_tag(region_code, options, html_options)
       end
-
       alias_method :area_select_ul, :district_select_ul
 
       def city_select_ul(object, method, region_code=nil, options={}, html_options={})
@@ -50,9 +49,7 @@ module ActionView
         theme_options
       end
 
-      def hidden_field
-        @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code)
-      end
+      
 
       def secure_random
         @secure_random ||= "area-select-#{SecureRandom.hex}"
@@ -85,17 +82,10 @@ module ActionView
         javascript
       end
 
-      def controls(select_scope)
-        @instance_tag.content_tag(:div, select(select_scope), :class => "controls")
-      end
-
-      def label
-        @instance_tag.to_label_tag(nil, :class => "control-label")
-      end
-
       def control_group(select_scope)
-        group = [label, controls(select_scope)]
-        content_tag(:div, group.join.html_safe, :class => "control-group area_select_ul")
+        controls = @instance_tag.content_tag(:div, select(select_scope), :class => "controls")
+        label = @instance_tag.to_label_tag(nil, :class => "control-label")
+        content_tag(:div, [label, controls].join.html_safe, :class => "control-group area_select_ul")
       end
 
       def to_select(select_scope)
@@ -107,6 +97,7 @@ module ActionView
       end
 
       def select(select_scope)
+        hidden_field = @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code)
         body = [
             hidden_field,
             public_send(select_scope),
