@@ -22,6 +22,7 @@
   5. add Foundation theme(http://foundation.zurb.com/)
   6. 支持x-editable(http://vitalets.github.io/x-editable/demo.html)
   7. 兼容rails 4.0
+  8. AngularJs directive
 
 ##Installation
 
