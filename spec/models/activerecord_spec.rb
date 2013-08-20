@@ -28,14 +28,14 @@ class Company < ActiveRecord::Base
 end
 
 describe AreaSelectCn::ActsAsAreaSelectable do
-  subject{ Company.new }
+  subject { Company.new }
   it "should return nil when attribute region_code is nil" do
-    expect(subject.region_code).to be_nil 
+    expect(subject.region_code).to be_nil
   end
 
   it "should return \"\" when attribute region_code eql \"\"" do
     subject.region_code = ""
-    expect(subject.region_code).to eq("") 
+    expect(subject.region_code).to eq("")
   end
 
   it "should return AreaSelectCn::Id instance" do
@@ -63,7 +63,7 @@ describe AreaSelectCn::ActsAsAreaSelectable do
   end
 
   it "should be unvalid when region_code is blank" do
-    subject.region_code = nil 
+    subject.region_code = nil
     expect(subject).not_to be_valid
     expect(subject.save).to be_false
   end

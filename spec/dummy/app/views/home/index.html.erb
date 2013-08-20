@@ -1,5 +1,5 @@
 <div class="span8 alert">
-  <%= form_for @company, :builder => AreaSelectCn::Helpers::FormBuilder, :html => {:class => 'form-horizontal'} do |f| %>
+  <%= form_for @company, :url => '#', :builder => AreaSelectCn::Helpers::FormBuilder, :html => {:class => 'form-horizontal'} do |f| %>
     <legend>form_for</legend>
     <%= f.district_select_ul :region_code %>
     <%= f.district_select_ul :loc_code%>
@@ -8,7 +8,7 @@
     </div>
   <% end %>
 
-  <%= simple_form_for @company, :html => {:class => 'form-horizontal'} do |f| %>
+  <%= simple_form_for @company, :url => '#', :html => {:class => 'form-horizontal'} do |f| %>
     <legend>simple_form_for</legend>
     <%= f.input :region_code, :as => :district_select_ul, :prompt_class => "btn btn-success" %>
     <%= f.input :loc_code, :as => :district_select_ul, :prompt_class => "btn btn-success" %>
@@ -17,7 +17,7 @@
     </div>
   <% end %>
 
-  <%= form_tag "", :class => 'form-horizontal' do %>
+  <%= form_tag "#", :class => 'form-horizontal' do %>
     <legend>form_tag</legend>
     <%= district_select_ul(:company, :region_code, "331000", :theme => :bootstrap, :prompt_class => "btn btn-danger") %>
     <%= district_select_ul(:company, :loc_code, "331000", :theme => :bootstrap, :prompt_class => "btn btn-danger") %>
@@ -76,3 +76,4 @@
     </script>
   <% end %>
 </div>
+
