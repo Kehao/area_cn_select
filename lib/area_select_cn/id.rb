@@ -39,7 +39,8 @@ module AreaSelectCn
     end
 
     def initialize(id)
-      @id = id.to_s
+      @id = id
+      @code = id.to_s
     end
 
     def segment_blank?(segment)
@@ -73,27 +74,31 @@ module AreaSelectCn
 
     def province_id
       @province_id ||= 
-        if id_match && segment_blank?(id_match[1])
-          id_match[1].ljust(6, '0')
+        if code_match && segment_blank?(code_match[1])
+          code_match[1].ljust(6, '0')
         end
     end
 
     def city_id 
       @city_id ||= 
-        if id_match && segment_blank?(id_match[2])
-          "#{id_match[1]}#{id_match[2]}".ljust(6, '0')
+        if code_match && segment_blank?(code_match[2])
+          "#{code_match[1]}#{code_match[2]}".ljust(6, '0')
         end
     end
 
     def district_id
       @district_id ||= 
-        if id_match && segment_blank?(id_match[3])
-          id
+        if code_match && segment_blank?(code_match[3])
+          @code
         end
     end
 
-    def id_match 
-      @id_match ||= @id.match(self.class.id_regular)
+    def code_match 
+      @code_match ||= @code.match(self.class.code_regular)
+    end
+
+    def to_s
+      @id
     end
 
     class << self
@@ -105,7 +110,7 @@ module AreaSelectCn
         @data ||= parser.list
       end
 
-      def id_regular
+      def code_regular
         /(\d{2})(\d{2})(\d{2})/ 
       end
     end
