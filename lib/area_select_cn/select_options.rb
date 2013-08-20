@@ -47,14 +47,9 @@ module AreaSelectCn
       end
 
       def select_options(region_code)
-        if region_code
-          instance = new(region_code)
-          instance.as_options
-        else
-          options.merge(
-            :selected_districts => parser.list_provinces
-          )
-        end
+        region_code = region_code.to_s || '000000'
+        instance = new(region_code)
+        instance.as_options
       end
     end
 

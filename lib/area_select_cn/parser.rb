@@ -49,7 +49,7 @@ module AreaSelectCn
       end
 
       def area_regular
-        Id.id_regular
+        Id.code_regular
       end
 
       def json_data

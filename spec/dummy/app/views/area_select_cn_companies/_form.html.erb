@@ -2,6 +2,7 @@
   <%= form_for @company, :builder => AreaSelectCn::Helpers::FormBuilder, :html => {:class => 'form-horizontal'} do |f| %>
     <legend>form_for</legend>
     <%= f.district_select_ul :region_code %>
+    <%= f.district_select_ul :loc_code %>
     <div class="form-actions">
       <%= f.submit "提交", :class => "btn btn-success" %>
     </div>
@@ -10,6 +11,7 @@
   <%= simple_form_for @company, :html => {:class => 'form-horizontal'} do |f| %>
     <legend>simple_form_for</legend>
     <%= f.input :region_code, :as => :district_select_ul, :prompt_class => "btn btn-success" %>
+    <%= f.input :loc_code, :as => :district_select_ul, :prompt_class => "btn btn-success" %>
     <div class="form-actions">
       <%= f.submit "提交", :class => "btn btn-success" %>
     </div>
