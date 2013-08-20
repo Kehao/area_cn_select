@@ -1,13 +1,13 @@
 #encoding: utf-8
 require 'spec_helper'
 
-TEST_CODE = "340000"
+TEST_CODE = "331002"
 
 feature 'visit the testpage' do
   scenario 'page should init district-ul select' do
     visit "/" 
     assert_select_exist
-    assert_district_ul(TEST_CODE)
+    assert_district_ul(AreaSelectCn::District.id(TEST_CODE))
   end
 
   scenario 'page should init other district-ul select' do
@@ -42,8 +42,8 @@ feature 'visit the testpage' do
   end
 
   def assert_select_exist
-    page.should have_css('dl.area-select-cn')
-    page.source.should have_selector('dd.select-input',:count => 3)
+    page.should have_css('div.area_select_ul')
+    page.source.should have_selector('.select-input',:count => 3)
     page.source.should have_selector('ul.select-opts',:count => 3)
     #page.assert_selector('dd.select-input',:count => 3)
     #page.assert_selector('ul.select-opts', :count => 3)

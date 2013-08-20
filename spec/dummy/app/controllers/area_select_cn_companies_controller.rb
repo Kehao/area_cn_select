@@ -5,7 +5,7 @@ class AreaSelectCnCompaniesController < ApplicationController
 
   def new
     @company = AreaSelectCn::Company.new
-    @company.region_code = 331002
+    @company.region_code = 331002 
   end
 
   def create

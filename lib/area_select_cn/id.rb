@@ -2,7 +2,7 @@
 module AreaSelectCn
   class Id
     include SelectOptions
-    attr_reader :id
+    attr_reader :value,:code
 
     def area_name(mark="-")
       [province_name,city_name,district_name].compact.join(mark) 
@@ -39,7 +39,7 @@ module AreaSelectCn
     end
 
     def initialize(id)
-      @id = id
+      @value = id
       @code = id.to_s
     end
 
@@ -95,10 +95,6 @@ module AreaSelectCn
 
     def code_match 
       @code_match ||= @code.match(self.class.code_regular)
-    end
-
-    def to_s
-      @id
     end
 
     class << self

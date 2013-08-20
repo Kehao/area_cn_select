@@ -45,12 +45,6 @@ module AreaSelectCn
           :selected_districts => []
         }
       end
-
-      def select_options(region_code)
-        region_code = region_code.to_s || '000000'
-        instance = new(region_code)
-        instance.as_options
-      end
     end
 
   end

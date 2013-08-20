@@ -4,10 +4,20 @@ describe AreaSelectCn::Id do
 
   context "legal region code" do
     subject{AreaSelectCn::Id.new("331002")}
-    it{expect(subject.id).to eq("331002")}
+    it{expect(subject.value).to eq("331002")}
     it{expect(subject.province_id).to eq("330000")}
     it{expect(subject.city_id).to eq("331000")}
     it{expect(subject.district_id).to eq("331002")}
+
+    it "should return real value" do
+      expect(AreaSelectCn::Id.new(330000).value).to eq(330000)
+      expect(AreaSelectCn::Id.new("330000").value).to eq("330000")
+    end
+
+    it "should return region_code.to_s" do
+      expect(AreaSelectCn::Id.new(330000).code).to eq("330000")
+      expect(AreaSelectCn::Id.new("330000").code).to eq("330000")
+    end
     
     it "should return province_id" do
       expect(AreaSelectCn::Id.new("00000a").province_id).to be_nil 
@@ -81,7 +91,5 @@ describe AreaSelectCn::Id do
       expect(AreaSelectCn::Id.new("331002").selected_cities).not_to be_blank 
       expect(AreaSelectCn::Id.new("331002").selected_districts).not_to be_blank 
     end
-
   end
-
 end

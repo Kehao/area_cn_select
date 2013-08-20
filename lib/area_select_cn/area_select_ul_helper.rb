@@ -27,14 +27,18 @@ module ActionView
       attr_accessor :options, :html_options, :region_code
 
       def initialize(instance_tag, region_code, options = {}, html_options = {})
-        @options = options.dup.merge(area_options(region_code)).merge(theme_options(options))
-        @html_options = html_options.dup
-        @region_code = region_code
         @instance_tag = instance_tag
+        @region_code = objectify_code(region_code)
+        @options = options.dup.merge(area_options).merge(theme_options(options))
+        @html_options = html_options.dup
       end
 
-      def area_options(region_code)
-        AreaSelectCn::Id.select_options(region_code)
+      def objectify_code(code)
+        code.is_a?(AreaSelectCn::Id) && code || AreaSelectCn::Id.new(code)
+      end
+
+      def area_options
+        region_code.as_options
       end
 
       def theme_options(options)
@@ -95,7 +99,8 @@ module ActionView
       end
 
       def select(select_scope)
-        hidden_field = @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code)
+        hidden_field = @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code.value.presence)
+
         body = [
             hidden_field,
             public_send(select_scope),
