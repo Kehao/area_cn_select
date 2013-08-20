@@ -9,20 +9,17 @@
 
 $baseLineHeight: 20px;
 
-.field_with_errors{
-  color: red;
-}
-.field_with_errors .controls{
- border: 1px solid red;
-}
-
 body {
-    padding-top: 45px;
+  padding-top: 45px;
 }
 
 strong {
-    font-weight: bold;
-    line-height: $baseLineHeight - 1;
+  font-weight: bold;
+  line-height: $baseLineHeight - 1;
 }
 
+.field_with_errors{
+  .controls{ border: 1px solid red; }
+  color: red;
+}
 

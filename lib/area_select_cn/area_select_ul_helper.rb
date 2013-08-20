@@ -8,7 +8,6 @@ module ActionView
         tag = InstanceTag.new(object, method, self, options.delete(:object))
         tag.to_district_select_ul_tag(region_code, options, html_options)
       end
-
       alias_method :area_select_ul, :district_select_ul
 
       def city_select_ul(object, method, region_code=nil, options={}, html_options={})
@@ -22,7 +21,7 @@ module ActionView
       end
     end
 
-    class AreaCnUlSelector #:nodoc:
+    class AreaCnSelectUlSelector #:nodoc:
       include ActionView::Helpers::TagHelper
       include ActionView::Helpers::UrlHelper
       attr_accessor :options, :html_options, :region_code
@@ -38,15 +37,6 @@ module ActionView
         AreaSelectCn::Id.select_options(region_code)
       end
 
-      def hidden_field
-        @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code)
-      end
-
-
-      def secure_random
-        @secure_random ||= "area-select-#{SecureRandom.hex}"
-      end
-
       def theme_options(options)
         theme_options = theme[options[:theme]]
         theme_options ||= theme[:default]
@@ -57,6 +47,10 @@ module ActionView
           theme_options[:prompt_class] = options[:prompt_class]
         end
         theme_options
+      end
+
+      def secure_random
+        @secure_random ||= "area-select-#{SecureRandom.hex}"
       end
 
       def theme
@@ -86,17 +80,10 @@ module ActionView
         javascript
       end
 
-      def controls(select_scope)
-        @instance_tag.content_tag(:div, select(select_scope), :class => "controls clearfix")
-      end
-
-      def label
-        @instance_tag.to_label_tag(nil, :class => "control-label")
-      end
-
       def control_group(select_scope)
-        group = [label, controls(select_scope)]
-        content_tag(:div, group.join.html_safe, :class => "control-group area_select_ul")
+        controls = @instance_tag.content_tag(:div, select(select_scope), :class => "controls")
+        label = @instance_tag.to_label_tag(nil, :class => "control-label")
+        content_tag(:div, [label, controls].join.html_safe, :class => "control-group area_select_ul")
       end
 
       def to_select(select_scope)
@@ -108,6 +95,7 @@ module ActionView
       end
 
       def select(select_scope)
+        hidden_field = @instance_tag.to_input_field_tag("hidden", :class => "select-value", :value => region_code)
         body = [
             hidden_field,
             public_send(select_scope),
@@ -129,7 +117,7 @@ module ActionView
       def select_city
         [:province, :city].map do |scope|
           scope_select(scope, options, html_options)
-        end.join("")
+        end.join
       end
 
       def selected(cur, required, class_name="active")
@@ -173,23 +161,23 @@ module ActionView
 
     end
 
-    module AreaHelperInstanceTag
+    module SelectUlHelperInstanceTag
 
       def to_district_select_ul_tag(region_code, options, html_options)
-        AreaCnUlSelector.new(self, region_code, options, html_options).to_select(:select_district)
+        AreaCnSelectUlSelector.new(self, region_code, options, html_options).to_select(:select_district)
       end
 
       def to_city_select_ul_tag(region_code, options, html_options)
-        AreaCnUlSelector.new(self, region_code, options, html_options).to_select(:select_city)
+        AreaCnSelectUlSelector.new(self, region_code, options, html_options).to_select(:select_city)
       end
 
       def to_province_select_ul_tag(region_code, options, html_options)
-        AreaCnUlSelector.new(self, region_code, options, html_options).to_select(:select_province)
+        AreaCnSelectUlSelector.new(self, region_code, options, html_options).to_select(:select_province)
       end
     end
 
     class InstanceTag #:nodoc:
-      include AreaHelperInstanceTag
+      include SelectUlHelperInstanceTag
     end
 
   end

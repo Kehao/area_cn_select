@@ -3,8 +3,8 @@
   整理多种地区选择器:
 
   1. select-ul 模拟下拉菜单
-  2. auto complete 方式(select2)
-  3. select(not done)
+  2. select(doing)
+  3. auto complete 方式(not done)
 
 ## Example
   [Online Demo](http://112.124.38.145:9292).
@@ -12,15 +12,17 @@
 ##Features
   1. 支持bootstrap  
   2. 支持simple_form
-  3. 支持select2(not done)
+  3. 支持select和select-ul(not done)
 
 ##TODO
   1. from_tag_helper district_select_ul(done)
   2. 错误处理(done)
-  3. auto complete 选择器(doing)
-  4. add Foundation theme(http://foundation.zurb.com/)
-  5. 支持x-editable(http://vitalets.github.io/x-editable/demo.html)
-  6. 兼容rails 4.0
+  3. select方式(doing)
+  4. auto complete 选择器(not done)
+  5. add Foundation theme(http://foundation.zurb.com/)
+  6. 支持x-editable(http://vitalets.github.io/x-editable/demo.html)
+  7. 兼容rails 4.0
+  8. AngularJs directive
 
 ##Installation
 
