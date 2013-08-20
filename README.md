@@ -58,7 +58,9 @@ id = AreaSelectCn::District.id("331002")
 
 ### instance methods 
 ```ruby
-id = AreaSelectCn::Id.new("331000")  
+id = AreaSelectCn::Id.new(331000)  
+id.value                # => 331000 原始数据
+id.code                 # => "331002" to_s后的数据
 id.name                 # => "台州市"
 
 id.province?            # => false
