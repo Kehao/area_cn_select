@@ -5,7 +5,7 @@ zh-CN:
       messages:
         blank: "不能为空！"
     models:
-      area_select_cn/company: "公司"
+      company: "公司"
     attributes:
-      area_select_cn/company:
+      company:
         region_code: "地区"
