@@ -11,11 +11,6 @@ ActiveRecord::Base.connection.instance_eval do
     t.string :name
     t.timestamps
   end
-
-  create_table :area_select_cn_companies do |t|
-    t.string :name
-    t.timestamps
-  end
 end
 
 class Company < ActiveRecord::Base

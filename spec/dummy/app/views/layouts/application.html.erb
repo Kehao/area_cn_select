@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= yield :title %> Area Select CN</title>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="container">
-  <%= yield %>
-</div>
-<%= javascript_include_tag "application" %>
-<%= yield :js %>
-</body>
+  <head>
+    <title><%= yield :title %> Area Select CN</title>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%#= render "shared/snap_drawers"%>
+    <div id="content" class="container">
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag "application" %>
+    <%= yield :js %>
+  </body>
 </html>
