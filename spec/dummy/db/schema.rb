@@ -16,8 +16,9 @@ ActiveRecord::Schema.define(:version => 20130717055253) do
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.string   "loc_code"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.date     "registration_date"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
 end

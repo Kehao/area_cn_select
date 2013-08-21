@@ -5,4 +5,9 @@ class Company < ActiveRecord::Base
   acts_as_area_field :region_code
   validates :region_code, presence: true
   validates :loc_code, presence: true
+
+  def reg_date
+    Date.today
+  end
+
 end

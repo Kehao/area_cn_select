@@ -1,10 +1,10 @@
 /* 
- * jQuery District Plugin 
+ * jQuery DistrictUl Plugin 
  */
 (function ($) {
     var jQuery = $;
 
-    var District = function (selector, options) {
+    var DistrictUl = function (selector, options) {
         options = options || {};
         jQuery.extend(this.options, options);
 
@@ -24,22 +24,22 @@
         this.attachBody();
     };
 
-    // for `new jQuery.District()` or `jQuery.District()`
-    jQuery.District = function (selector, options) {
-        return new District(selector, options);
+    // for `new jQuery.DistrictUl()` or `jQuery.DistrictUl()`
+    jQuery.DistrictUl = function (selector, options) {
+        return new DistrictUl(selector, options);
     };
 
-    jQuery.extend(District.prototype, {
+    jQuery.extend(DistrictUl.prototype, {
         loadDistrictData: function () {
             var self = this;
             if (!this.district) {
-                if (!District.data) {
+                if (!DistrictUl.data) {
                     $.get(this.options.url, function (data) {
-                        District.data = data;
-                        self.district = District.data;
+                        DistrictUl.data = data;
+                        self.district = DistrictUl.data;
                     }, self.options.dataType);
                 } else {
-                    self.district = District.data;
+                    self.district = DistrictUl.data;
                 }
             }
         },
@@ -215,10 +215,10 @@
 })(jQuery);
 
 $(document).ready(function () {
-    if (window.AREA_SELECT_CN_FIELDS !== undefined) {
-        for (var i in window.AREA_SELECT_CN_FIELDS) {
-            var f = window.AREA_SELECT_CN_FIELDS[i];
-            jQuery.District(f[0], f[1]);
+    if (window.AREA_SELECT_CN_DISTRICT_UL_FIELDS !== undefined) {
+        for (var i in window.AREA_SELECT_CN_DISTRICT_UL_FIELDS) {
+            var f = window.AREA_SELECT_CN_DISTRICT_UL_FIELDS[i];
+            jQuery.DistrictUl(f[0], f[1]);
         }
     }
 });

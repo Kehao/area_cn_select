@@ -20,3 +20,5 @@ module AreaSelectCn
   end
 end
 require 'area_select_cn/area_select_ul_helper'
+require 'area_select_cn/area_select_helper'
+

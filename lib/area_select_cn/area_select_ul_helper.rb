@@ -66,10 +66,10 @@ module ActionView
       def javascript_tag
         javascript = <<-JAVASCRIPT
           <script>
-            if(window.AREA_SELECT_CN_FIELDS === undefined) {
-              window.AREA_SELECT_CN_FIELDS = [];
+            if(window.AREA_SELECT_CN_DISTRICT_UL_FIELDS === undefined) {
+              window.AREA_SELECT_CN_DISTRICT_UL_FIELDS = [];
             }
-            window.AREA_SELECT_CN_FIELDS.push(
+            window.AREA_SELECT_CN_DISTRICT_UL_FIELDS.push(
               [".#{secure_random}",
                 {
                   selectContainer:        '.#{options[:select][:class]}',

@@ -96,7 +96,7 @@
     },
 
     options: {
-      url: "/district/", 
+      url: '/area_select_cn/district',
       onChange: null 
     },
     dataCache: {},
@@ -106,4 +106,13 @@
     curDistrict: null
   });
 })($);
+
+$(document).ready(function () {
+    if (window.AREA_SELECT_CN_DISTRICT_FIELDS !== undefined) {
+        for (var i in window.AREA_SELECT_CN_DISTRICT_FIELDS) {
+            var f = window.AREA_SELECT_CN_DISTRICT_FIELDS[i];
+            jQuery.District(f[0], f[1]);
+        }
+    }
+});
 
