@@ -101,8 +101,8 @@ results.first.area_name("/")
 # => "浙江省/台州市/椒江区"
 ```
 ## 使用acts_as_area_field 简化调用
-company.rb
 ```ruby
+#company.rb
 class Company < ActiveRecord::Base
   attr_accessor :region_code
   attr_accessible :region_code
