@@ -1,6 +1,7 @@
 # encoding: utf-8
 require 'action_view/helpers/tag_helper'
 require 'action_view/helpers/url_helper'
+
 module ActionView
   module Helpers
     module FormOptionsHelper
@@ -8,6 +9,7 @@ module ActionView
         tag = InstanceTag.new(object, method, self, options.delete(:object))
         tag.to_district_select_ul_tag(region_code, options, html_options)
       end
+
       alias_method :area_select_ul, :district_select_ul
 
       def city_select_ul(object, method, region_code=nil, options={}, html_options={})
