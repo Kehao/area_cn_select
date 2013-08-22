@@ -140,9 +140,9 @@ company.region_code.name
 ```erb
 
 <%= form_tag "" do %>
-#select
+<!-- select -->
   <%= district_select(:company,:region_code,"331000") %>
-#select-ul
+<!-- select-ul -->
   <%= district_select_ul(:company,:region_code,"331000") %>
 <% end %>
 ```
@@ -150,9 +150,9 @@ company.region_code.name
 ###form_for
 ```erb
 <%= form_for Company.new,:builder => AreaSelectCn::Helpers::FormBuilder do |f| %>
-#select
+<!-- select -->
   <%= f.district_select :region_code%>
-#select-ul
+<!-- select-ul -->
   <%= f.district_select_ul :region_code%>
 <%end%>
 ```
@@ -160,9 +160,9 @@ company.region_code.name
 ###simple_form_for
 ```erb
 <%= simple_form_for Company.new,:html => { :class => 'form-horizontal' } do |f| %>
-#select
+<!-- select -->
   <%= f.input :region_code,:as => :district_select %>
-#select-ul
+<!-- select-ul -->
   <%= f.input :region_code,:as => :district_select_ul %>
 <% end %>
 ```
