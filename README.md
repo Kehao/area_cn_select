@@ -4,7 +4,6 @@
 
   1. select-ul 模拟下拉菜单
   2. select(done,testing)
-  3. auto complete 方式(not done)
 
 ## Example
   [Online Demo](http://112.124.38.145:9292).
@@ -14,18 +13,8 @@
   2. 支持simple_form
   3. 支持select和select-ul
 
-##TODO
-  1. from_tag_helper district_select_ul(done)
-  2. 错误处理(done)
-  3. select方式(done)
-  4. auto complete 选择器(not done)
-  5. add Foundation theme(http://foundation.zurb.com/)
-  6. 支持x-editable(http://vitalets.github.io/x-editable/demo.html)
-  7. 兼容rails 4.0
-  8. AngularJs directive
 
 ##Installation
-
 Add it to your Gemfile:
 ```ruby
 gem 'area_select_cn',:git=>"git@github.com:Kehao/area_select_cn.git"
@@ -39,6 +28,9 @@ bundle install
 Add it to your application.js:
 
 ```console
+// select
+//= require area_select_cn/jquery.district-ul
+// select-ul
 //= require area_select_cn/jquery.district-ul
 ```
 
