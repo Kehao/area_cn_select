@@ -14,10 +14,13 @@ module AreaSelectCn
     alias_method :get_name,:get_text
     alias_method :name,:get_text
 
-    def get_children
-      get[:children]
+    def children
+      return [] unless get && get[:children]
+
+      get[:children].map do |id,attr_hash|
+        [attr_hash[:text],id]
+      end
     end
-    alias_method :children,:get_children
 
     def get
       @get ||= province? && province

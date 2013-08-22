@@ -41,9 +41,10 @@
       });
     },
     afterChange: function(select){
+      var self = this;
       this.resetSelectedValues();
       if(jQuery.type(this.options.onChange) === 'function')
-        this.options.onChange.call(select, this.curDistrict);
+        this.options.onChange.call(select,self.districtContainer,this.curDistrict);
     },
 
     changeAfterSelect: function(select, data){
@@ -96,7 +97,7 @@
     },
 
     options: {
-      url: '/area_select_cn/district',
+      url: '/area_select_cn/district?region_code=',
       onChange: null 
     },
     dataCache: {},

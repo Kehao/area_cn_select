@@ -160,7 +160,23 @@ module AreaSelectCn
       }
 
       def javascript_tag
-        ""
+        javascript = <<-JAVASCRIPT
+          <script>
+            if(window.AREA_SELECT_CN_DISTRICT_FIELDS === undefined) {
+              window.AREA_SELECT_CN_DISTRICT_FIELDS = [];
+            }
+            window.AREA_SELECT_CN_DISTRICT_FIELDS.push(
+              [".#{secure_random}",
+                {
+                  onChange: function($container,code){
+                    $container.find(".select-value").val(code);
+                  }
+                }
+              ]
+            );
+          </script>
+        JAVASCRIPT
+        javascript
       end
 
       def build_select(type)
@@ -178,7 +194,7 @@ module AreaSelectCn
         instance_tag.to_select_tag(
           selected_scopes.unshift(BLANK[type]),
           {:selected =>selected_scope[1]}.merge(options),
-          html_options
+          {:id=>nil}.merge(html_options)
         )
       end
 

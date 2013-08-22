@@ -71,6 +71,14 @@ describe AreaSelectCn::Id do
       expect(AreaSelectCn::Id.new("331002").get[:children]).to be_nil
     end
 
+    it "should get children" do
+      expect(AreaSelectCn::Id.new("330000").children).to be_include(["台州市", "331000"])
+      expect(AreaSelectCn::Id.new("330000").children).not_to be_include(["椒江区", "331002"])
+
+      expect(AreaSelectCn::Id.new("331000").children).to be_include(["椒江区", "331002"])
+      expect(AreaSelectCn::Id.new("331002").children).to be_blank
+    end
+
     it "should get area name" do
       expect(AreaSelectCn::Id.new("330000").area_name).to eq("浙江省")
       expect(AreaSelectCn::Id.new("331000").area_name).to eq("浙江省-台州市")
