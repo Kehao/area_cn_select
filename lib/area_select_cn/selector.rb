@@ -28,7 +28,7 @@ module AreaSelectCn
       def control_group(type)
         controls = instance_tag.content_tag(:div, build_select(type), :class => "controls")
         label = instance_tag.to_label_tag(nil, :class => "control-label")
-        content_tag(:div, [label, controls].join.html_safe, :class => "control-group area_select_ul")
+        content_tag(:div, [label, controls].join.html_safe, :class => "control-group area_select_cn")
       end
 
       def build_hidden 
@@ -193,8 +193,8 @@ module AreaSelectCn
 
         instance_tag.to_select_tag(
           selected_scopes.unshift(BLANK[type]),
-          {:selected =>selected_scope[1]}.merge(options),
-          {:id=>nil}.merge(html_options)
+          {:selected =>selected_scope && selected_scope[1]}.merge(options),
+          {:id=>nil,:class=>type}.merge(html_options)
         )
       end
 

@@ -11,14 +11,37 @@ module AreaSelectCn
           @builder.public_send(scope, attribute_name, opts.merge(:simple_form => true))
         end
       end
+      #select
+      class DistrictSelectInput < AreaSelectBase
+        def input
+          scope_input(:district_select)
+        end
+      end
 
+      class AreaSelectInput < DistrictSelectInput
+
+      end
+
+      class CitySelectInput < AreaSelectBase
+        def input
+          scope_input(:city_select)
+        end
+      end
+
+      class ProvinceSelectInput < AreaSelectBase
+        def input
+          scope_input(:province_select)
+        end
+      end
+      
+      #select-ul
       class DistrictSelectUlInput < AreaSelectBase
         def input
           scope_input(:area_select_ul)
         end
       end
 
-      class AreaSelectInput < DistrictSelectUlInput
+      class AreaSelectUlInput < DistrictSelectUlInput
 
       end
 
@@ -27,11 +50,13 @@ module AreaSelectCn
           scope_input(:city_select_ul)
         end
       end
+
       class ProvinceSelectUlInput < AreaSelectBase
         def input
           scope_input(:province_select_ul)
         end
       end
+
 
     end
   end

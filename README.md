@@ -3,7 +3,7 @@
   整理多种地区选择器:
 
   1. select-ul 模拟下拉菜单
-  2. select(doing)
+  2. select(done,testing)
   3. auto complete 方式(not done)
 
 ## Example
@@ -12,12 +12,12 @@
 ##Features
   1. 支持bootstrap  
   2. 支持simple_form
-  3. 支持select和select-ul(not done)
+  3. 支持select和select-ul
 
 ##TODO
   1. from_tag_helper district_select_ul(done)
   2. 错误处理(done)
-  3. select方式(doing)
+  3. select方式(done)
   4. auto complete 选择器(not done)
   5. add Foundation theme(http://foundation.zurb.com/)
   6. 支持x-editable(http://vitalets.github.io/x-editable/demo.html)
@@ -138,7 +138,11 @@ company.region_code.name
 ## FormHelper
 ###form_tag
 ```erb
+
 <%= form_tag "" do %>
+#select
+  <%= district_select(:company,:region_code,"331000") %>
+#select-ul
   <%= district_select_ul(:company,:region_code,"331000") %>
 <% end %>
 ```
@@ -146,6 +150,9 @@ company.region_code.name
 ###form_for
 ```erb
 <%= form_for Company.new,:builder => AreaSelectCn::Helpers::FormBuilder do |f| %>
+#select
+  <%= f.district_select :region_code%>
+#select-ul
   <%= f.district_select_ul :region_code%>
 <%end%>
 ```
@@ -153,12 +160,16 @@ company.region_code.name
 ###simple_form_for
 ```erb
 <%= simple_form_for Company.new,:html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :region_code,:as => :district_select_ul}%>
+#select
+  <%= f.input :region_code,:as => :district_select %>
+#select-ul
+  <%= f.input :region_code,:as => :district_select_ul %>
 <% end %>
 ```
 
 ###province,city,district select helper
 ```erb
+<!-- select,select-ul适用 -->
 <!-- form_tag -->
 <%= district_select_ul(:company,:region_code,"331000") %>
 <%= city_select_ul(:company,:region_code,"331000") %>
@@ -175,7 +186,7 @@ company.region_code.name
 <%= f.input :region_code,:as => :province_select_ul %>
 ```
 
-##Theme
+##Theme(select-ul适用)
   1. default
   2. bootstrap
 

@@ -32,7 +32,7 @@ module ActionView
       end
 
       def to_province_select_ul_tag(region_code=nil,options={}, html_options={})
-        district_ul_selector.new(region_code, options, html_options).to_select(:province)
+        district_ul_selector(region_code, options, html_options).to_select(:province)
       end
 
       private

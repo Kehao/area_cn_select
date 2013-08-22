@@ -22,4 +22,11 @@ strong {
   .controls{ border: 1px solid red; }
   color: red;
 }
+.province_select,
+.city_select,
+.district_select{
+  select{width:130px;margin-right:10px}
+}
+
+
 
