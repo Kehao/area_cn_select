@@ -114,7 +114,7 @@ company.region_code = 331002
 #不使用acts_as_area_field
 company.region_code 
 #=> 331002
-AreaSelectCn::Id(company.region_code).name
+AreaSelectCn::Id.new(company.region_code).name
 #=> "椒江区"
 
 #使用acts_as_area_field
