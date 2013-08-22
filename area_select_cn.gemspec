@@ -7,7 +7,6 @@ Gem::Specification.new do |s|
   s.version     = AreaSelectCn::VERSION
   s.authors     = ["kehao"]
   s.email       = ["kehao.qiu@gmail.com"]
-  s.homepage    = "http://cnblogs.com/orez88"
   s.summary     = %{中国地区选择}
   s.description = %{中国地区选择}
 

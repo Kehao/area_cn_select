@@ -11,7 +11,6 @@ module AreaSelectCn
     def get_text
       get[:text]
     end
-    alias_method :get_name,:get_text
     alias_method :name,:get_text
 
     def children
