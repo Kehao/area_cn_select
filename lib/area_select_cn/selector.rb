@@ -90,13 +90,11 @@ module AreaSelectCn
       end
 
       def build_select(type)
-
-        body = [
-          build_hidden,
-          public_send("select_#{type}"),
-          javascript_tag
-        ].join
-        content_tag(:div, body.html_safe, :class => "#{secure_random}")
+        content_tag(
+          :div, 
+          [build_hidden, public_send("select_#{type}"), javascript_tag].join.html_safe, 
+          :class => "#{secure_random}"
+        )
       end
 
       def javascript_tag
@@ -166,8 +164,11 @@ module AreaSelectCn
       end
 
       def build_select(type)
-        content = [ public_send("select_#{type}"), build_hidden, javascript_tag].join
-        content_tag(:div, content.html_safe, :class => "#{secure_random}")
+        content_tag(
+          :div, 
+          [public_send("select_#{type}"), build_hidden, javascript_tag].join.html_safe, 
+          :class => "#{secure_random}"
+        )
       end
 
       def build_one(type)
