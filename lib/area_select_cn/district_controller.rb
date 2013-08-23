@@ -8,9 +8,9 @@ module AreaSelectCn
       code = params[:region_code] 
       results = 
         if code 
-          AreaSelectCn::Id.new(code).children
+          DistrictCn.code(code).children
         else
-          AreaSelectCn::District.list
+          DistrictCn.tree
         end
       render :json => results
     end
@@ -18,7 +18,7 @@ module AreaSelectCn
     def search
       ids = []
       if params[:region_name]
-        ids = AreaSelectCn::District.search(params[:region_name])
+        ids = DistrictCn.search(params[:region_name])
       end
       render :json => ids.map{|id|{:id=>id.code,:text=>id.area_name}}
     end

@@ -18,7 +18,7 @@ module AreaSelectCn
 
       def objectify_code
         @objectify_code ||=
-        region_code.is_a?(AreaSelectCn::Id) && region_code || AreaSelectCn::Id.new(region_code)
+        region_code.is_a?(DistrictCn::Code) && region_code || DistrictCn::Code.new(region_code)
       end
 
       def secure_random

@@ -1,12 +1,12 @@
-require 'area_select_cn/acts_as_area_selectable'
+#require 'area_select_cn/acts_as_area_selectable'
 
 module AreaSelectCn
   class Engine < ::Rails::Engine
-    initializer "area_select_cn.active_model_ext" do
-      ActiveSupport.on_load :active_record do
-        ActiveRecord::Base.send :include, AreaSelectCn::ActsAsAreaSelectable
-      end
-    end
+#    initializer "area_select_cn.active_model_ext" do
+#      ActiveSupport.on_load :active_record do
+#        ActiveRecord::Base.send :include, AreaSelectCn::ActsAsAreaSelectable
+#      end
+#    end
   end
 end
 
